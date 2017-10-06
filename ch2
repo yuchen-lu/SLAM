@@ -1,1 +1,2 @@
+g++ -o output_file_name  source.cpp
 
