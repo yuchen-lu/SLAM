@@ -1,11 +1,11 @@
 #include <iostream>
 #include <ctime>
-using namespace std
+using namespace std;
 
 //eigen part
-#include <Eigen/Core>
+#include <eigen3/Eigen/Core>
 // dense matrix alg comput(inverse,eigenvalue)
-#include<Eigen/Dense>
+#include<eigen3/Eigen/Dense>
 
 #define MATRIX_SIZE 50
 
