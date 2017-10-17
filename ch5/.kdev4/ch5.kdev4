@@ -26,11 +26,11 @@ Name=New Compiled Binary Launcher (2)
 Type=Native Application
 
 [Launch][Launch Configuration 0][Data]
-Arguments="/home/yuchen/SLAMbook/ch5/ubuntu.png"
+Arguments="/home/yuchen/SLAMbook/ch5/ImageBasics/ubuntu.png"
 Dependencies=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x00)
 Dependency Action=Nothing
 EnvironmentGroup=
-Executable=file:///home/yuchen/SLAMbook/ch5/build/imageBasics
+Executable=file:///home/yuchen/SLAMbook/ch5/ImageBasics/build/imageBasics
 External Terminal=konsole --noclose --workdir %workdir -e %exe
 Project Target=ch5,imageBasics
 Use External Terminal=false
