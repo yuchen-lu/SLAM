@@ -3,8 +3,18 @@
 #include<chrono>
 #include<ceres/ceres.h>
 
+//whole idea:
+// use opencv noise generator, get 100 data with guassian noise, then use ceres:
+// define cost function, write as a functor, like a function a<double>()
+//use AddRedisualBlock to add error terms into func
+//coz optimization needs gradient, we can 1. auto diff by ceres 2.numeric diff 3.by hand provide deri formula to ceres
 
+//auto diff needs specify dimensions of error term and opti variables; error scale 1d, opti abc 3d
 
+//after setting up, use solve func to solve
+//in option, we can choose line search/trust region, iter times, steps...
+
+// good: auto diff, no need to find J; achieved by module, can be done when compling
 
 using namespace std;
 
