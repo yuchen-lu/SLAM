@@ -12,6 +12,9 @@
 #include<cmath>
 #include<chrono>
 
+//The problem is that at installation of g2o they do not copy the "FindG2O.cmake" into the "/usr/share/cmake-X.X/Modules/" directory.
+// This is where the "find_package" function of cmake usually looks for it. So just copying the "FindG2O.cmake" file there manually solved the problem for me.
+
 using namespace std;
 
 // peak if curve func, model params: opti variable dimension and data type
@@ -55,13 +58,13 @@ public:
     // compute curve model error
     void computeError()
     {
-      const CirveFittingVertex* v = static_cast<const CUrveFittingVertex*>(_vertices[0]);
+      const CurveFittingVertex* v = static_cast<const CurveFittingVertex*>(_vertices[0]);
       const Eigen::Vector3d abc = v->estimate();
-      _error(0,0) = _measurement -std::exp( abc(0,0)*_x*-x+abc(1,0)*_x_abc(2,0));
+      _error(0,0) = _measurement -std::exp( abc(0,0)*_x*-_x+abc(1,0)*abc(2,0));
       
     }
     virtual bool read(istream& in){}
-    virtuak bool write(ostream& out) const{}
+    virtual bool write(ostream& out) const{}
 public:
   
   double _x; // x, y are measurement
@@ -79,7 +82,7 @@ int main( int argc, char** argv)
   cout<<"generating data:"<<endl;
   for (int i=0; i<N;i++)
   {
-    double x i/100.0;
+    double x=i/100.0;
     x_data.push_back(x);
     y_data.push_back(exp(a*x*x+b*x+c)+rng.gaussian(w_sigma));
     cout<<x_data[i]<<' '<<y_data[i]<<endl;
