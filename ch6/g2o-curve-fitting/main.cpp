@@ -1,3 +1,4 @@
+
 #include<iostream>
 #include<g2o/core/base_vertex.h>
 #include<g2o/core/base_unary_edge.h>
@@ -88,13 +89,16 @@ int main( int argc, char** argv)
     cout<<x_data[i]<<' '<<y_data[i]<<endl;
   }
     
-  // construct img opti,first set g20
+  // construct img opti,first set up g20
   // matrix blocks(has a term in the book): every error term opti variable is 3d, error dim is 1d
-  typedef g2o::BlockSolver<g2o::BlockSolverTraits<3,1>> Block;
+ // typedef g2o::BlockSolver<g2o::BlockSolverTraits<3,1>> Block;
+  typedef g2o::BlockSolver< g2o::BlockSolverTraits<3,1> > Block;
   // linear func solver: dense delta x func
-  Block::LinearSolverType*linearSolver =new g2o::LinearSolverDense<Block::PoseMatrixType>();
-  Block* solver_ptr = new Block(linearSolver); // matrix block solver
+  //Block::LinearSolverType* linearSolver =new g2o::LinearSolverDense<Block::PoseMatrixType>();   // linear func solver
+ Block::LinearSolverType* linearSolver = new g2o::LinearSolverDense<Block::PoseMatrixType>();
   
+ // Block* solver_ptr = new Block( linearSolver ); // matrix block solver
+  Block* solver_ptr = new Block( linearSolver ); 
   // gradient decrese methods, pick from GN, LM and dogleg
   g2o::OptimizationAlgorithmLevenberg* solver = new g2o::OptimizationAlgorithmLevenberg(solver_ptr);
   
@@ -105,7 +109,7 @@ int main( int argc, char** argv)
   optimizer.setAlgorithm(solver); // set solver
   optimizer.setVerbose(true);
   
-  // add bertex to imges
+  // add vertex to imges
   CurveFittingVertex* v = new CurveFittingVertex();
   v->setEstimate(Eigen::Vector3d(0,0,0));
   v->setId(0);
@@ -139,17 +143,25 @@ int main( int argc, char** argv)
   
   // output optimization value
   Eigen::Vector3d abc_estimate = v->estimate();
-  cut<<"esti model:"<<abc_estimate.transpose()<<endl(
+  cout<<"esti model:"<<abc_estimate.transpose()<<endl;
    
     
     
   return 0;
-  )
   
-  
-  
-}
   
   
   
 }
+  
+  
+  
+}
+
+
+
+
+
+
+
+/}
