@@ -1,0 +1,4 @@
+[Project]
+Name=pose_estimation_2d2d
+Manager=KDevCMakeManager
+VersionControl=

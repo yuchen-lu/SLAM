@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/pose_estimation_2d2d.dir/main.cpp.o  -o pose_estimation_2d2d -rdynamic 

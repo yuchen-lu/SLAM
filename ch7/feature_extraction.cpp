@@ -75,7 +75,8 @@ int main ( int argc, char**argv)
   std::vector<DMatch> good_matches;
   for( int i=0; i<descriptors_1.rows;i++)
   {
-    if (matches[i].distance <= max(2*min_dist,30.0));
+    if (matches[i].distance <= max(2*min_dist,30.0));  // again, by experience, dis < 2*min hamming dis
+    
     {
       good_matches.push_back(matches[i]);
       
