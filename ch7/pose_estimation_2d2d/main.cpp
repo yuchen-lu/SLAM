@@ -4,13 +4,17 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/calib3d/calib3d.hpp>
 
+using namespace std;
+using namespace cv;
+
+
 
   void pose_estimation_2d2d(
     std::vector<KeyPoint> keypoints_1,
     std::vector<KeyPoint> keypoints_2,
     std::vector<DMatch> matches,
-    Mat& R, Mat& t
-  );
+    Mat& R, Mat& t)
+  
 {  
 
   // camera intrinsics, TUM Freiburg2
@@ -22,14 +26,14 @@
 
   for (int i=0; i<(int)matches.size();i++)
   {
-    points1.push_back(keypoints_1[matches[i].query[dx].pt]);
-    points2.push_back(keypoints_2[matches[i].train[dx].pt]);
+    points1.push_back(keypoints_1[matches[i].queryIdx].pt);
+    points2.push_back(keypoints_2[matches[i].trainIdx].pt);
   }
   
   // compute fundamentental matrix
-  Mat fundamentental_matrix;
-  fundamentental_matrix = findFundamentalMat(points1, points2, CV_FM_8POINT);
-  cout<<"funamental_matrix is "<<endl<<fundamenmental_matrix<<endl;
+  Mat fundamental_matrix;
+  fundamental_matrix = findFundamentalMat(points1, points2, CV_FM_8POINT);
+  cout<<"funamental_matrix is "<<endl<<fundamental_matrix<<endl;
   
   // compute essential matrix
   Point2d principal_point(325.1, 249.7); // light centre, TUM dataset calibration vallue
@@ -38,11 +42,17 @@
   essential_matrix = findEssentialMat(points1,points2,focal_length,principal_point,RANSAC);
   cout<<"essential matrix is "<<endl<<essential_matrix<<endl;
   
+  // compute homography matrix
+  Mat homography_matrix;
+  homography_matrix = findHomography(points1,points2,RANSAC,3,noArray(),2000,0.99);
+  cout<<"homography matrix is"<<endl<<homography_matrix<<endl;
+  
+  
   
   // recover rotation and translation
   recoverPose(essential_matrix,points1,points2,R,t,focal_length,principal_point);
   cout<<"R is "<<R<<endl;
-  cout<<"T is "<<T<<endl;
+  cout<<"T is "<<t<<endl;
   
 }
 

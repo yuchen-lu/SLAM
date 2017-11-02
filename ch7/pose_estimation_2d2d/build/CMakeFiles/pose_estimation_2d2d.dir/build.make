@@ -90,6 +90,24 @@ pose_estimation_2d2d_EXTERNAL_OBJECTS =
 
 pose_estimation_2d2d: CMakeFiles/pose_estimation_2d2d.dir/main.cpp.o
 pose_estimation_2d2d: CMakeFiles/pose_estimation_2d2d.dir/build.make
+pose_estimation_2d2d: /usr/local/lib/libopencv_dnn.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_ml.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_objdetect.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_shape.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_stitching.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_superres.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_videostab.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_viz.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_calib3d.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_features2d.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_flann.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_highgui.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_photo.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_video.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_videoio.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_imgcodecs.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_imgproc.so.3.3.0
+pose_estimation_2d2d: /usr/local/lib/libopencv_core.so.3.3.0
 pose_estimation_2d2d: CMakeFiles/pose_estimation_2d2d.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yuchen/SLAMbook/ch7/pose_estimation_2d2d/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable pose_estimation_2d2d"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pose_estimation_2d2d.dir/link.txt --verbose=$(VERBOSE)
