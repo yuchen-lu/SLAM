@@ -184,7 +184,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Project
+CMAKE_PROJECT_NAME:STATIC=joinMap
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -324,6 +324,12 @@ Qt5Network_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Network
 
 //The directory containing a CMake configuration file for Qt5WebKit.
 Qt5WebKit_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5WebKit
+
+//Value Computed by CMake
+joinMap_BINARY_DIR:STATIC=/home/yuchen/SLAMbook/ch5/joinMap/build
+
+//Value Computed by CMake
+joinMap_SOURCE_DIR:STATIC=/home/yuchen/SLAMbook/ch5/joinMap
 
 
 ########################

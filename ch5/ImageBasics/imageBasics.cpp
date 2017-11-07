@@ -1,6 +1,7 @@
-// Kdevelop add argument should be quoted ""
 
 
+
+// ----------highlight: Kdevelop add argument should be quoted ""
 
 
 #include <iostream>
@@ -24,10 +25,12 @@ int main ( int argc, char**argv)
   }
   
   
-  //output some basics
+  //cv::mat properties: rows, cols, channels, type 
   cout<<"width is"<<image.cols<<"height is"<<image.rows<<"channel number is"<<image.channels()<<endl;
   cv::imshow( "image",image);
   cv::waitKey (0); //pause function, wait one key input
+  
+  
   
   //check image type
   if (image.type() !=CV_8UC1 && image.type() !=CV_8UC3 )
@@ -43,10 +46,13 @@ int main ( int argc, char**argv)
   {
     for ( size_t x=0; x<image.cols; x++)
     {
+
+      //---------------highlight: how to read each pixel in a loop
       // visit x,y pixel
       //using cv::Mat::ptr to get image ptr
       unsigned char* row_ptr = image.ptr<unsigned char> (y); // row_ptr is yth row's row_ptr
       unsigned char* data_ptr = &row_ptr[x*image.channels()]; // data_ptr points to next visiting pixel data
+      
       //output every channel in the pixel, if greyscale, output one channel
       for ( int c=0; c!= image.channels(); c++)
       {
@@ -73,7 +79,7 @@ int main ( int argc, char**argv)
  // about copying cv::Mat, direct giving value doesn't copy data
   cv::Mat image_another = image;
   //edit image_another will change image 
-  image_another ( cv::Rect (0,0,100,100)).setTo(0); // zero top left 100*100
+  image_another ( cv::Rect (0,0,100,100) ).setTo(0); // zero top left 100*100
   cv::imshow("image",image);
   cv::waitKey(0);
   

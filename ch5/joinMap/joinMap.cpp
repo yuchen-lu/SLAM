@@ -1,6 +1,16 @@
+
+
+// overview: known five rgb-d imgs and camera intrinstics and extrinsics
+// using imgs and camera intrins ----> any pixel location in camera coords
+// using extrins(camera pose), find pixel in world coords
+// list all pixels' world coords, create sth like a map
+
+
+
+
 #include<iostream>
 #include<fstream>
-using namespace std;
+
 #include <opencv2/core/core.hpp>
 #include<eigen3/Eigen/Geometry>
 #include<opencv2/highgui/highgui.hpp>
@@ -10,29 +20,39 @@ using namespace std;
 #include<pcl-1.7/pcl/visualization/pcl_visualizer.h>
 
 
+using namespace std;
 
 
 int main( int argc, char** argv)
 {
-  vector<cv::Mat> colorImgs, depthImgs; // color and depthImgs
-  vector<Eigen::Isometry3d> poses; // camera poses
   
-  ifstream fin("./pose.txt");
+  // --------highlight: see how to call vector and its type!
+  
+  vector<cv::Mat> colorImgs, depthImgs; // color and depthImgs
+  vector<Eigen::Isometry3d,Eigen::aligned_allocator<Eigen::Isometry3d>> poses; // camera poses
+  
+  ifstream fin("/home/yuchen/SLAMbook/ch5/joinMap/build/pose.txt");
   if(!fin)
   {
     cerr<<"please run this file in the folder with pose.txt"<<endl;
     return 1;
   }
+  
+  
+  
+  //----highlight: how to process multiple imgs
   for ( int i=0; i<5; i++)
   {
     
-    boost::format fmt( "./%s%d.%s")// image format
-    colorImgs.push_back( cv::imread( (fmt%"color"%(i+1)%"png").str() ));
-    depthImgs.push_back( cv::imread( (fmt%"color"%(i+1)%"png").str(),-1 )); // use -1 to read original image
+    boost::format fmt( "./%s/%d.%s");// image file format
     
-    doubb
-     data[7]={0};
-     for ( auto& d:data)
+    
+    colorImgs.push_back( cv::imread( (fmt%"color"%(i+1)%"png").str() ));
+    depthImgs.push_back( cv::imread( (fmt%"depth"%(i+1)%"pgm").str(), -1 )); // use -1 to read original image
+    
+ // transform pose from Quaternion and translation vector to isometry matrix   
+     double data[7]={0};
+     for ( auto& d:data )
       fin>>d;
      Eigen::Quaterniond q( data[6], data[3], data[4], data[5]);
      Eigen::Isometry3d T(q);
@@ -44,7 +64,7 @@ int main( int argc, char** argv)
     //compute point cloud 
     //camera intrin
     double cx = 325.5;
-    double cy = 253.5
+    double cy = 253.5;
     double fx =518.0;
     double fy =519.0;
     double depthScale = 1000.0;
@@ -55,23 +75,29 @@ int main( int argc, char** argv)
     typedef pcl::PointXYZRGB PointT;
     typedef pcl::PointCloud<PointT> PointCloud;
     
-    //create new PointCloud
+    //create a new PointCloud
     PointCloud::Ptr pointCloud (new PointCloud);
     for ( int i=0; i<5; i++)
     {
       cout<<"transforming image zzzZZZ.."<<i+1<<endl;
       cv::Mat color = colorImgs[i];
-      cv::Mat depth = colorImgs[i];
+      cv::Mat depth = depthImgs[i];
       Eigen::Isometry3d T =poses[i];
       for ( int v=0; v<color.rows; v++)
 	for ( int u=0; u<color.cols; u++)
 	{
 	  unsigned int d = depth.ptr<unsigned short> (v)[u];// depth value
 	  if ( d==0) continue ; // if 0, didnt detect
-	  Eigen::Vector3d point;
-	  point[2] = double(d)/depthScale;
-	  point[0] = (u-cx)*point[2]/fx;
-	  point[1] = (v-cy)*point[2]/fy;
+	
+	
+// calculate positions in camera coods of pixels with (u,v) and depth d	
+// then transform to world coods using extrins(pose)
+
+	Eigen::Vector3d point;
+	  point[2] = double(d)/depthScale; 
+	  point[0] = (u-cx)*point[2]/fx; // x coods in camera
+	  point[1] = (v-cy)*point[2]/fy; // y coods in camera
+ // why??
 	  Eigen::Vector3d pointWorld = T*point;
 	  
 	  PointT p;
@@ -85,20 +111,16 @@ int main( int argc, char** argv)
 	 
 	  
 	  
-	
 	}
-      
-      
-      
     }
+      
+      
+      
+    
     pointCloud->is_dense = false;
-    cout<< "point cloud has" <<pointCloud->size() <<"of points"<<endl;
-    pcl::io::savePCDFileBinary("map.pcd",*PointCloud);
+    cout<< "point cloud has" <<pointCloud->size() <<" points"<<endl;
+    pcl::io::savePCDFileBinary("map.pcd",*pointCloud);
     return 0;
-    
-    
-    
-    
-    
+
   
 }
