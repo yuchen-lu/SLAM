@@ -50,7 +50,7 @@ int main ( int argc, char**argv)
   
   // step 3: associate descriptors for two imgs, use brief Hamming dist
   vector<DMatch> matches;
-  BFMatcher matcher (NORM_HAMMING);
+  BFMatcher matcher (NORM_HAMMING); //brute-force descriptor matcher
   matcher.match(descriptors_1,descriptors_2,matches);
   
   // step 4: filter match points
