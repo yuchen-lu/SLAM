@@ -2,8 +2,6 @@
 //we extract FAST corners, then use LK optical flow to track, and draw them out in imgs
 
 
-
-
 #include <fstream>
 #include <list>
 #include <vector>
@@ -29,15 +27,20 @@ int main(int argc, char **argv) {
   string path_to_dataset = argv[1];
   string associate_file = path_to_dataset + "/associate.txt";
   ifstream fin( associate_file);
+  if (!fin)
+    cout<<"need asscoiate.txt!!"<<endl;
+  
   string rgb_file, depth_file, time_rgb, time_depth;
   list< cv::Point2f> keypoints; // using list because track failed points will be deleted
   cv::Mat color, depth, last_color;
+  
   for (int index = 0; index<100; index++)
   {
     fin>>time_rgb>>rgb_file>>time_depth>>depth_file;
     color = cv::imread(path_to_dataset+"/"+rgb_file);
     depth = cv::imread(path_to_dataset+"/"+depth_file, -1);
-    if (index != 0)
+    
+    if (index == 0)
     {
       // extract FAST feature points to 1st pixel
       vector<cv::KeyPoint> kps;
@@ -95,24 +98,8 @@ int main(int argc, char **argv) {
     cv::imshow("coners", img_show);
     cv::waitKey(0);
     last_color = color;
-    
-      
-	
-      
-      
-      
-      
+  
   }
     
-    
-    
-    
-    
-    
-    
-    
-  
-  
-  
     return 0;
 }
