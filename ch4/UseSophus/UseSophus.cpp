@@ -25,19 +25,24 @@ int main( int argc, char**argv)
   Eigen::Quaterniond q(R); 
   Sophus::SO3 SO3_q(q); 
   
-  // print as so(3), NOT SO(3) , SO(3) 's element is a 3d vector
+  // print as so(3), NOT SO(3) 
+  // although print as so3(3d vector), still a 3x3 (R)
   
   cout<<"SO(3) from matrix:"<<SO3_R<<endl;
   cout<<"SO(3) from matrix:"<<SO3_v<<endl;
   cout<<"SO(3) from matrix:"<<SO3_q<<endl;
   
   
+  
   //get Lie Alg from expo map
   // careful about so3 & so3 hat
+  //R= exp(phi^)
+  //log(R)=phi^
+  
   Eigen::Vector3d so3 =SO3_R.log(); 
   cout<<"so3="<<so3.transpose()<<endl;
   // hat ^ is vector to skew-symm matrix
-  cout<<"so3 hat="<<Sophus::SO3::hat(so3)<<endl;
+  cout<<"so3 hat="<<Sophus::SO3::hat(so3)<<endl; //3x3, different from R
   
   
   //similarly, vee is matrix to vector
