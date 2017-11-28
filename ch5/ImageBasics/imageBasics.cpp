@@ -14,8 +14,9 @@ using namespace std;
 int main ( int argc, char**argv)
 {
   
-  //read argv[1] image 
-  cv::Mat image;
+  //read argv[1] image
+  // image type declare
+  cv::Mat image; 
   image =cv::imread(argv[1]); // cv::imread --function read specific path
   //check if read correctly
   if (image.data == nullptr) 
@@ -26,19 +27,22 @@ int main ( int argc, char**argv)
   
   
   //cv::mat properties: rows, cols, channels, type 
-  cout<<"width is"<<image.cols<<"height is"<<image.rows<<"channel number is"<<image.channels()<<endl;
+  cout<<"width is "<<image.cols<<"height is "<<image.rows<<
+  "channel number is "<<image.channels()<<endl;
   cv::imshow( "image",image);
   cv::waitKey (0); //pause function, wait one key input
   
   
   
   //check image type
+  //grayscale CV_8UC1 , 3 channel image of type CV_8UC3
   if (image.type() !=CV_8UC1 && image.type() !=CV_8UC3 )
   {
     // image type not fit
     cout<<"please input a color or greyscale image"<<endl;
     return 0;
   }    
+  
   
   //time using std::chrono
   chrono::steady_clock::time_point t1 = chrono::steady_clock::now();
@@ -50,14 +54,15 @@ int main ( int argc, char**argv)
       //---------------highlight: how to read each pixel in a loop
       // visit x,y pixel
       //using cv::Mat::ptr to get image ptr
+      // dont understand ??
       unsigned char* row_ptr = image.ptr<unsigned char> (y); // row_ptr is yth row's row_ptr
       unsigned char* data_ptr = &row_ptr[x*image.channels()]; // data_ptr points to next visiting pixel data
       
-      //output every channel in the pixel, if greyscale, output one channel
+      //output every channel in the pixel, if greyscale, only output one channel
       for ( int c=0; c!= image.channels(); c++)
       {
 	
-	unsigned char data = data_ptr[c]; // data  is cth channel value in I(x,y)
+	unsigned char data = data_ptr[c]; // data  is c-th channel value in I(x,y)
 
       }
 
@@ -76,11 +81,16 @@ int main ( int argc, char**argv)
   
   
   
- // about copying cv::Mat, direct giving value doesn't copy data
+  // about copying cv::Mat, directly giving value doesn't copy data!
+ 
   cv::Mat image_another = image;
-  //edit image_another will change image 
+  //-----highlight-----edit image_another will change image!
+  // has to use image.clone()
+  
+  
   image_another ( cv::Rect (0,0,100,100) ).setTo(0); // zero top left 100*100
-  cv::imshow("image",image);
+  // 0 is black
+  cv::imshow("image_another",image);
   cv::waitKey(0);
   
   

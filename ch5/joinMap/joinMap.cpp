@@ -53,7 +53,7 @@ int main( int argc, char** argv)
  // transform pose from Quaternion and translation vector to isometry matrix   
      double data[7]={0};
      for ( auto& d:data )
-      fin>>d;
+	fin>>d;
      Eigen::Quaterniond q( data[6], data[3], data[4], data[5]);
      Eigen::Isometry3d T(q);
      T.pretranslate( Eigen::Vector3d( data[0], data[1], data[2]));
