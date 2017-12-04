@@ -3,6 +3,8 @@
 #include<chrono>
 #include<ceres/ceres.h>
 
+
+// problem : estimate a,b,c (not x) to minimize an equation
 //whole idea:
 // use opencv noise generator, get 100 data with guassian noise, then use ceres:
 // define cost function, write as a functor, like a function a<double>()
@@ -19,12 +21,15 @@
 using namespace std;
 
 //model cost funct
+//http://ceres-solver.org/automatic_derivatives.html#
+
 
 struct CURVE_FITTING_COST
 {
   CURVE_FITTING_COST (double x, double y): _x (x), _y (y) {}
   
   // find residual difference
+  // whats in the template????
   template <typename T>
   bool operator()(
     const T* const abc, // model para. 3d
@@ -48,7 +53,7 @@ int main(int argc, char**argv)
     int N=100; //data pts
     double w_sigma=1.0; // sigma of noise
     cv::RNG rng; // opencv random number generator
-    double abc[3]={0,0,0}; // approxi of abc params
+    double abc[3]={0,0,0}; // estimaytion of abc params
   
   vector<double> x_data, y_data;  //data
   
@@ -56,7 +61,7 @@ int main(int argc, char**argv)
   
   for (int i=0;i<N;i++)
   {
-    double x =i/100.0;
+      double x =i/100.0;
       x_data.push_back ( x );
       y_data.push_back(
       exp(a*x*x +b*x+c)+rng.gaussian(w_sigma)
@@ -64,15 +69,23 @@ int main(int argc, char**argv)
    );
     cout<<x_data[i]<<" "<<y_data[i]<<endl;
   } 
+  
+  
     // construct lsp 
-    ceres::Problem problem;
+    ceres::Problem problem;  
     for (int i=0; i<N;i++)
     {
-      problem.AddResidualBlock( // add error term; use auto derivative, module params: error type,output/input dimensions
+      problem.AddResidualBlock( // add error term; 
+      //use auto derivative, module params: error type,output/input dimensions
+      // values refer to previous struct style
+      
 	new ceres::AutoDiffCostFunction<CURVE_FITTING_COST,1,3>(
 	  
 	  new CURVE_FITTING_COST (x_data[i], y_data[i])
-	), nullptr,abc); // no core function here, so empty, abc is params waited to be estimated
+	),
+	nullptr, //no core function here, so empty
+	abc // abc is params waited to be estimated
+      ); //
 	
       
       
