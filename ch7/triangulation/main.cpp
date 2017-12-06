@@ -3,7 +3,12 @@
 #include <opencv2/features2d/features2d.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/calib3d/calib3d.hpp>
-namespace std;
+using namespace std;
+using namespace cv;
+
+//  using pose to get features points' 3d position using triangu
+// calling out opencv triangulation
+
 
 
 void triangulation (
@@ -22,7 +27,8 @@ void triangulation(const vector< KeyPoint >& KeyPoint_1, const vector< KeyPoint 
     Mat T1 = (Mat_<double>(3,4) <<
     1,0,0,0,
     0,1,0,0,
-    0,0,1,0;
+    0,0,1,0);
+    
     Mat T2 =(Mat_<double> (3,4)<<
       R.at<double>(0,0), R.at<double>(0,1), R.at<double>(0,2),t.at<double>(0,0),
       R.at<double>(1,0), R.at<double>(1,1), R.at<double>(1,2), t.at<double>(1,0),

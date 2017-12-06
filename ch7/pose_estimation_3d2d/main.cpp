@@ -4,13 +4,66 @@
 #include <opencv2/features2d/features2d.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/calib3d/calib3d.hpp>
+#include <eigen3/Eigen/Core>
+#include <eigen3/Eigen/Geometry>
+#include <g2o/core/base_vertex.h>
+#include <g2o/core/base_unary_edge.h>
+#include <g2o/core/block_solver.h>
+#include <g2o/core/optimization_algorithm_levenberg.h>
+#include <g2o/solvers/csparse/linear_solver_csparse.h>
+#include <g2o/types/sba/types_six_dof_expmap.h>
+#include <chrono>
+
 
 using namespace std;
 using namespace cv;
 
+void find_feature_matches(
+  const Mat& img_1, const Mat& img_2, 
+  std::vector<KeyPoint>&keypoints_1,
+  std::vector<KeyPoint>&keypoints_2,
+  std::vector<DMatch>& matches);
+)
+
+
+// pixel coods to camera gui yi coods
+Point2d pixel2cam(const Point2d& p, const Mat& K);
+
+Void bundleAdjustment(
+  const vector<Point3f> points_3d,
+  const vector<Point2f> points_2d,
+  const Mat& K,
+  Mat& R, Mat& t  
+);
+
+
+
+
+
 
 int main(int argc, char **argv) 
 {
+  
+  if( argc!= 5)
+  {
+    cout<<"usg: pose_estimation 3d2d img1 img2 dep1 depth2"<<endl;
+    return 1;        
+  }
+  
+  
+  // read img
+  Mat img_1 = imread(argv[1], CV_LOAD_IMAGE_COLOR);
+  Mat img_2 = imread(argv[1], CV_LOAD_IMAGE_COLOR);
+  
+  // define key pts and distance match
+  vector<KeyPoint> keypoints_1, keypoints_2;
+  vector<DMatch> matches;
+  
+  find_feature_matches(img_1, img_2, keypoints_1, keypoints_2, matches);
+  cout<<"I found total number of "<<matches.size()<<"    set of matching points"<<endl;
+  
+  
+
   
   // create 3d points
   Mat d1 = imread(argv[3], CV_LOAD_IMAGE_UNCHANGED); // depth pic is 16 digit non-sign number, single channel
@@ -31,6 +84,8 @@ int main(int argc, char **argv)
     
     Mat r,t;
     // call opencv pnp, can choose EPNP, DLS....
+    // solvePnP: input 3dcoods, 2dcoods, camera intrinsics K;
+    // output r,t
     solvePnP(pts_3d, pts_2d, K,Mat(), r,t,false,cv::SOLVEPNP_EPNP);
     Mat R;
     cv::Rodrigues(r,R);// r is rotation vector, use Rodrigues to transform to matrix

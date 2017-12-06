@@ -23,8 +23,6 @@ int main ( int argc, char**argv)
     
     cout<<"usage: feature_extraction img1 img2"<<endl;
     return 1;
-    
-    
   }
   
   //read img
@@ -32,15 +30,15 @@ int main ( int argc, char**argv)
   Mat img_2 = imread( argv[2], CV_LOAD_IMAGE_COLOR);
   
   // initilization
-  std::vector<KeyPoint> keypoints_1, keypoints_2;
-  Mat descriptors_1, descriptors_2;
-  Ptr<ORB> orb = ORB::create(500,1.2f,8,31,0,2,ORB::HARRIS_SCORE,31,20);
+  std::vector<KeyPoint> keypoints_1, keypoints_2;  // declaim keypoint
+  Mat descriptors_1, descriptors_2;  // descriptors are mat!
+  Ptr<ORB> orb = ORB::create(500,1.2f,8,31,0,2,ORB::HARRIS_SCORE,31,20); //DEFAULT
   
   // step 1: detect oriented fast corner position
   orb->detect(img_1,keypoints_1);
   orb->detect(img_2,keypoints_2);
   
-  //step 2: compute descriptors
+  //step 2: compute descriptors, draw feature points
   orb->compute(img_1,keypoints_1,descriptors_1);
   orb->compute(img_2,keypoints_2,descriptors_2);
   
