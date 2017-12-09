@@ -31,4 +31,3 @@ namespace myslam   // give a namespace to avoid defining other functions, needed
   
   
   
-}
