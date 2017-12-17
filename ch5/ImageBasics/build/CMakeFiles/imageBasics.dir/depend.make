@@ -35,6 +35,16 @@ CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/core/ty
 CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/core/types_c.h
 CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/core/utility.hpp
 CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/core/version.hpp
+CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/cudaarithm.hpp
+CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/cudabgsegm.hpp
+CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/cudacodec.hpp
+CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/cudafeatures2d.hpp
+CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/cudafilters.hpp
+CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/cudaimgproc.hpp
+CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/cudaobjdetect.hpp
+CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/cudaoptflow.hpp
+CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/cudastereo.hpp
+CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/cudawarping.hpp
 CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/features2d.hpp
 CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/flann.hpp
 CMakeFiles/imageBasics.dir/imageBasics.cpp.o: /usr/local/include/opencv2/flann/all_indices.h

@@ -1,3 +1,5 @@
+// summary of this program:
+// read image, show image, read all pixels, copy, give values
 
 
 
@@ -53,10 +55,11 @@ int main ( int argc, char**argv)
 
       //---------------highlight: how to read each pixel in a loop
       // visit x,y pixel
-      //using cv::Mat::ptr to get image ptr
+      //using cv::Mat::ptr to get image ROW ptr
       // dont understand ??
-      unsigned char* row_ptr = image.ptr<unsigned char> (y); // row_ptr is yth row's row_ptr
+      unsigned char* row_ptr = image.ptr<unsigned char> (y); // row_ptr is yth row's row_ptr    // mat ptr Returns a pointer to the specified matrix row. 
       unsigned char* data_ptr = &row_ptr[x*image.channels()]; // data_ptr points to next visiting pixel data
+      cout<<*data_ptr<<endl;
       
       //output every channel in the pixel, if greyscale, only output one channel
       for ( int c=0; c!= image.channels(); c++)
@@ -73,7 +76,7 @@ int main ( int argc, char**argv)
   }
   chrono::steady_clock::time_point t2 = chrono::steady_clock::now();
   chrono::duration<double> time_used = chrono::duration_cast<chrono::duration<double>>(t2-t1);
-  cout<<"scan image used time :"<<time_used.count()<<"second(s)"<<endl;
+  cout<<"scan image used time :"<<time_used.count()<<" second(s)"<<endl;
   
   
   
