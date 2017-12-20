@@ -1,23 +1,28 @@
 
 
-// overview: known five rgb-d imgs and camera intrinstics and extrinsics
-// using imgs and camera intrins ----> any pixel location in camera coords
-// using extrins(camera pose), find pixel in world coords
+// overview: get a Map !
+//known five rgb-d imgs and camera intrinstics and extrinsics(Twc in pose.txt)
+// using imgs and camera intrins ----> any pixel location in CAMERA coords
+// using extrins(camera pose), find these pixel in WORLD coords
 // list all pixels' world coords, create sth like a map
 
-
+// pose format: [x,y,z,qx,qy,qz,qw] ,where qw is real
+// goal (1) get one rgb-d corresponding pcl using intrinstics
+// goal (2) using pose to connect pcl for all imgs, get map
 
 
 #include<iostream>
 #include<fstream>
 
 #include <opencv2/core/core.hpp>
-#include<eigen3/Eigen/Geometry>
+
+
+#include<Eigen/Geometry>
 #include<opencv2/highgui/highgui.hpp>
 #include<boost/format.hpp> // for formating strings
-#include<pcl-1.7/pcl/point_types.h>
-#include<pcl-1.7/pcl/io/pcd_io.h>
-#include<pcl-1.7/pcl/visualization/pcl_visualizer.h>
+#include<pcl/point_types.h>
+#include<pcl/io/pcd_io.h>
+#include<pcl/visualization/pcl_visualizer.h>
 
 
 using namespace std;
@@ -28,9 +33,9 @@ int main( int argc, char** argv)
   
   // --------highlight: see how to call vector and its type!
   
-  vector<cv::Mat> colorImgs, depthImgs; // color and depthImgs
-  vector<Eigen::Isometry3d,Eigen::aligned_allocator<Eigen::Isometry3d>> poses; // camera poses
-  
+  vector<cv::Mat> colorImgs, depthImgs; // colorImgs and depthImgs
+//vector<Eigen::Isometry3d,Eigen::aligned_allocator<Eigen::Isometry3d>> poses; // camera poses
+  vector<Eigen::Isometry3d> poses;
   ifstream fin("/home/yuchen/SLAMbook/ch5/joinMap/build/pose.txt");
   if(!fin)
   {

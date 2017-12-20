@@ -59,7 +59,7 @@ int main ( int argc, char**argv)
       // dont understand ??
       unsigned char* row_ptr = image.ptr<unsigned char> (y); // row_ptr is yth row's row_ptr    // mat ptr Returns a pointer to the specified matrix row. 
       unsigned char* data_ptr = &row_ptr[x*image.channels()]; // data_ptr points to next visiting pixel data
-      cout<<*data_ptr<<endl;
+//  cout<<*data_ptr<<endl;
       
       //output every channel in the pixel, if greyscale, only output one channel
       for ( int c=0; c!= image.channels(); c++)
