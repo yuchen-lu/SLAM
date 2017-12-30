@@ -1,0 +1,20 @@
+/home/yuchen/clion-2017.3.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/yuchen/SLAMbook/ch10/g2o_custombundle
+CMake Error at CMakeLists.txt:12 (Find_Package):
+  By not providing "FindCholmod.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "Cholmod", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "Cholmod" with any
+  of the following names:
+
+    CholmodConfig.cmake
+    cholmod-config.cmake
+
+  Add the installation prefix of "Cholmod" to CMAKE_PREFIX_PATH or set
+  "Cholmod_DIR" to a directory containing one of the above files.  If
+  "Cholmod" provides a separate development package or SDK, be sure it has
+  been installed.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles/CMakeOutput.log".
