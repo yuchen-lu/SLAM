@@ -1,18 +1,18 @@
 class Frame
 {
 public:
-	typedefstd::shared_ptr<Frame> Ptr;
+	typedef std::shared_ptr<Frame> Ptr;
 	unsigned long id_; // id of this frame
 	double time_stamp_; // when it is recorded
-	SE3 T_c_w_; // transofrom from world to camera-- pose
+	SE3 T_c_w_; // pose
 	Camera::Ptr camera_; // pinhole rgb-d camera model
 	Mat color_, depth_; //color and depth image
 	
 public:		//data members
-	Frame();
-	Frame( long id, double time_stamp_ =0, SE3	 T_c_w_=SE3(), Camera::Ptr camera= nullptr, 
+	Frame(); //default constructor
+	Frame( long id, double time_stamp_ =0, SE3 T_c_w_=SE3(), Camera::Ptr camera= nullptr, 
 	       Mat color =Mat(), Mat depth = Mat()  ) ;  // see how the initial value are defined by different variable names! (with/ without understroke)
-	-Frame(); //whats this?
+	-Frame(); //decostructor
 	
 	//factory function
 	static Frame::Ptr createFrame();
@@ -30,7 +30,8 @@ public:		//data members
 	
 };
 
-
+	
+public:		
 
 class MapPoint // MapPoint is landmark, estimate world pose, 
 //use feature points from prev frame to match landmarks to esti pose
