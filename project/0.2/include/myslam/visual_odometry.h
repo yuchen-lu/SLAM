@@ -1,3 +1,13 @@
+#ifndef VISUALODOMETRY_H
+#define VISUALODOMETRY_H
+
+#include "/myslam/map.h"
+#include "/myslam/common_include.h"
+
+
+
+
+namespace myslam
 class VisualOdometry
 
 // about vo class:
@@ -16,10 +26,10 @@ public:
   VOstate state_; // current VO status
   Map::Ptr map_; ////map with all frames and map points 
   Frame::Ptr ref_; //reference frame 
-  Frame::Ptr curr_ // current frame 
+  Frame::Ptr curr_; // current frame 
   cv::Ptr<cv::ORB> orb_; // orb detctor and computer
-  vector<cv::Point3f> pts_ed_ref_; //3d points in ref frame
-  vector<cb::KeyPoint> keypoints_curr_; // KeyPoints in current frame
+  vector<cv::Point3f> pts_3d_ref_; //3d points in ref frame
+  vector<cv::KeyPoint> keypoints_curr_; // KeyPoints in current frame
   Mat descriptors_curr_; //descriptors in current frame
   Mat descriptors_ref_; //descriptors in ref frame
   vector<cv::DMatch> feature_matches_;

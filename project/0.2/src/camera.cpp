@@ -1,4 +1,4 @@
-#include"/home/yuchen/SLAMbook/project/0.1/include/myslam/camera.h"
+#include"myslam/camera.h"
 
 
 namespace myslam 
