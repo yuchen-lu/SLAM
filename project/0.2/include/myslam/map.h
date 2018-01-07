@@ -1,3 +1,10 @@
+#ifndef MAP_H
+#define MAP_H
+
+#include "myslam/common_include.h"
+#include "myslam/frame.h"
+#include "myslam/mappoint.h"
+
 class Map // manage all landmarks and add new landmarks
 // delete  bad landmarks
 // vo matching process only deals with Map class

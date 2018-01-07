@@ -1,3 +1,10 @@
+
+#ifndef FRAME_H
+#define FRAME_H
+
+#include "myslam/common_include.h"
+#include "myslam/camera.h"
+
 class Frame
 {
 public:
@@ -12,7 +19,7 @@ public:		//data members
 	Frame(); //default constructor
 	Frame( long id, double time_stamp_ =0, SE3 T_c_w_=SE3(), Camera::Ptr camera= nullptr, 
 	       Mat color =Mat(), Mat depth = Mat()  ) ;  // see how the initial value are defined by different variable names! (with/ without understroke)
-	-Frame(); //decostructor
+	Frame(); //decostructor
 	
 	//factory function
 	static Frame::Ptr createFrame();

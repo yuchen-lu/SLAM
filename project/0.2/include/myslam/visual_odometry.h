@@ -1,8 +1,8 @@
 #ifndef VISUALODOMETRY_H
 #define VISUALODOMETRY_H
 
-#include "/myslam/map.h"
-#include "/myslam/common_include.h"
+#include "myslam/map.h"
+#include "myslam/common_include.h"
 
 
 
@@ -23,8 +23,8 @@ public:
     INITILIZING =1, OK =0, LOST
   };
   
-  VOstate state_; // current VO status
-  Map::Ptr map_; ////map with all frames and map points 
+  VOState state_; // current VO status
+  Map::Ptr map_; //map with all frames and map points
   Frame::Ptr ref_; //reference frame 
   Frame::Ptr curr_; // current frame 
   cv::Ptr<cv::ORB> orb_; // orb detctor and computer
@@ -37,7 +37,7 @@ public:
   SE3 T_c_r_estimated_; // estimated pose of current frame
   int num_inliers_; // number of inlier features in icp
   int num_lost_; // number of lost times
-  
+ 
   //params
   int num_of_features; 
   double scale_factor_; // in image pyramid
@@ -51,7 +51,7 @@ public:
   
 public:
   VisualOdometry();
-  -VisualOdometry();
+  ~VisualOdometry();
   
   bool addFrame(Frame::Ptr frame); // add a new frame
   

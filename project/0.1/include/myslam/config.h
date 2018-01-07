@@ -1,3 +1,9 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#include "myslam/common_include.h"
+
+
 class Config // config file reading, and provide config accessible anywhere
 // write Config as Singleton--only one objection, when seting config, create the object and read conifg
 // when programs end, delete itself
