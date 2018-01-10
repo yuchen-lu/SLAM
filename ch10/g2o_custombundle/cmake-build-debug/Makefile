@@ -110,6 +110,126 @@ depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named g2o_customBundle
+
+# Build rule for target.
+g2o_customBundle: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 g2o_customBundle
+.PHONY : g2o_customBundle
+
+# fast build rule for target.
+g2o_customBundle/fast:
+	$(MAKE) -f CMakeFiles/g2o_customBundle.dir/build.make CMakeFiles/g2o_customBundle.dir/build
+.PHONY : g2o_customBundle/fast
+
+#=============================================================================
+# Target rules for targets named ParseCmd
+
+# Build rule for target.
+ParseCmd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ParseCmd
+.PHONY : ParseCmd
+
+# fast build rule for target.
+ParseCmd/fast:
+	$(MAKE) -f CMakeFiles/ParseCmd.dir/build.make CMakeFiles/ParseCmd.dir/build
+.PHONY : ParseCmd/fast
+
+#=============================================================================
+# Target rules for targets named BALProblem
+
+# Build rule for target.
+BALProblem: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BALProblem
+.PHONY : BALProblem
+
+# fast build rule for target.
+BALProblem/fast:
+	$(MAKE) -f CMakeFiles/BALProblem.dir/build.make CMakeFiles/BALProblem.dir/build
+.PHONY : BALProblem/fast
+
+common/BALProblem.o: common/BALProblem.cpp.o
+
+.PHONY : common/BALProblem.o
+
+# target to build an object file
+common/BALProblem.cpp.o:
+	$(MAKE) -f CMakeFiles/BALProblem.dir/build.make CMakeFiles/BALProblem.dir/common/BALProblem.cpp.o
+.PHONY : common/BALProblem.cpp.o
+
+common/BALProblem.i: common/BALProblem.cpp.i
+
+.PHONY : common/BALProblem.i
+
+# target to preprocess a source file
+common/BALProblem.cpp.i:
+	$(MAKE) -f CMakeFiles/BALProblem.dir/build.make CMakeFiles/BALProblem.dir/common/BALProblem.cpp.i
+.PHONY : common/BALProblem.cpp.i
+
+common/BALProblem.s: common/BALProblem.cpp.s
+
+.PHONY : common/BALProblem.s
+
+# target to generate assembly for a file
+common/BALProblem.cpp.s:
+	$(MAKE) -f CMakeFiles/BALProblem.dir/build.make CMakeFiles/BALProblem.dir/common/BALProblem.cpp.s
+.PHONY : common/BALProblem.cpp.s
+
+common/flags/command_args.o: common/flags/command_args.cpp.o
+
+.PHONY : common/flags/command_args.o
+
+# target to build an object file
+common/flags/command_args.cpp.o:
+	$(MAKE) -f CMakeFiles/ParseCmd.dir/build.make CMakeFiles/ParseCmd.dir/common/flags/command_args.cpp.o
+.PHONY : common/flags/command_args.cpp.o
+
+common/flags/command_args.i: common/flags/command_args.cpp.i
+
+.PHONY : common/flags/command_args.i
+
+# target to preprocess a source file
+common/flags/command_args.cpp.i:
+	$(MAKE) -f CMakeFiles/ParseCmd.dir/build.make CMakeFiles/ParseCmd.dir/common/flags/command_args.cpp.i
+.PHONY : common/flags/command_args.cpp.i
+
+common/flags/command_args.s: common/flags/command_args.cpp.s
+
+.PHONY : common/flags/command_args.s
+
+# target to generate assembly for a file
+common/flags/command_args.cpp.s:
+	$(MAKE) -f CMakeFiles/ParseCmd.dir/build.make CMakeFiles/ParseCmd.dir/common/flags/command_args.cpp.s
+.PHONY : common/flags/command_args.cpp.s
+
+g2o_bundle.o: g2o_bundle.cpp.o
+
+.PHONY : g2o_bundle.o
+
+# target to build an object file
+g2o_bundle.cpp.o:
+	$(MAKE) -f CMakeFiles/g2o_customBundle.dir/build.make CMakeFiles/g2o_customBundle.dir/g2o_bundle.cpp.o
+.PHONY : g2o_bundle.cpp.o
+
+g2o_bundle.i: g2o_bundle.cpp.i
+
+.PHONY : g2o_bundle.i
+
+# target to preprocess a source file
+g2o_bundle.cpp.i:
+	$(MAKE) -f CMakeFiles/g2o_customBundle.dir/build.make CMakeFiles/g2o_customBundle.dir/g2o_bundle.cpp.i
+.PHONY : g2o_bundle.cpp.i
+
+g2o_bundle.s: g2o_bundle.cpp.s
+
+.PHONY : g2o_bundle.s
+
+# target to generate assembly for a file
+g2o_bundle.cpp.s:
+	$(MAKE) -f CMakeFiles/g2o_customBundle.dir/build.make CMakeFiles/g2o_customBundle.dir/g2o_bundle.cpp.s
+.PHONY : g2o_bundle.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -117,7 +237,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... g2o_customBundle"
+	@echo "... ParseCmd"
 	@echo "... edit_cache"
+	@echo "... BALProblem"
+	@echo "... common/BALProblem.o"
+	@echo "... common/BALProblem.i"
+	@echo "... common/BALProblem.s"
+	@echo "... common/flags/command_args.o"
+	@echo "... common/flags/command_args.i"
+	@echo "... common/flags/command_args.s"
+	@echo "... g2o_bundle.o"
+	@echo "... g2o_bundle.i"
+	@echo "... g2o_bundle.s"
 .PHONY : help
 
 

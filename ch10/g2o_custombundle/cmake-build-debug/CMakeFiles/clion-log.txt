@@ -1,20 +1,7 @@
 /home/yuchen/clion-2017.3.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/yuchen/SLAMbook/ch10/g2o_custombundle
-CMake Error at CMakeLists.txt:12 (Find_Package):
-  By not providing "FindCholmod.cmake" in CMAKE_MODULE_PATH this project has
-  asked CMake to find a package configuration file provided by "Cholmod", but
-  CMake did not find one.
-
-  Could not find a package configuration file provided by "Cholmod" with any
-  of the following names:
-
-    CholmodConfig.cmake
-    cholmod-config.cmake
-
-  Add the installation prefix of "Cholmod" to CMAKE_PREFIX_PATH or set
-  "Cholmod_DIR" to a directory containing one of the above files.  If
-  "Cholmod" provides a separate development package or SDK, be sure it has
-  been installed.
-
-
--- Configuring incomplete, errors occurred!
-See also "/home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+find g2o libraries in: /usr/local/include
+find g2o lib in g2o_clig2o_ext_freeglut_minimalg2o_simulatorg2o_solver_slam2d_linearg2o_types_icpg2o_types_slam2dg2o_types_sbag2o_types_slam3dg2o_coreg2o_interfaceg2o_solver_csparseg2o_solver_structure_onlyg2o_csparse_extensiong2o_opengl_helperg2o_solver_denseg2o_stuffg2o_types_sclam2dg2o_parserg2o_solver_pcgg2o_types_datag2o_types_sim3cxsparse
+find cholmod in /usr/include/suitesparse
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug

@@ -1,2 +1,5 @@
 /home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles/g2o_customBundle.dir
+/home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles/ParseCmd.dir
 /home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles/BALProblem.dir

@@ -60,6 +60,118 @@ CMAKE_SOURCE_DIR = /home/yuchen/SLAMbook/ch10/g2o_custombundle
 CMAKE_BINARY_DIR = /home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug
 
 #=============================================================================
+# Target rules for target CMakeFiles/g2o_customBundle.dir
+
+# All Build rule for target.
+CMakeFiles/g2o_customBundle.dir/all: CMakeFiles/ParseCmd.dir/all
+CMakeFiles/g2o_customBundle.dir/all: CMakeFiles/BALProblem.dir/all
+	$(MAKE) -f CMakeFiles/g2o_customBundle.dir/build.make CMakeFiles/g2o_customBundle.dir/depend
+	$(MAKE) -f CMakeFiles/g2o_customBundle.dir/build.make CMakeFiles/g2o_customBundle.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target g2o_customBundle"
+.PHONY : CMakeFiles/g2o_customBundle.dir/all
+
+# Include target in all.
+all: CMakeFiles/g2o_customBundle.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/g2o_customBundle.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/g2o_customBundle.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/g2o_customBundle.dir/rule
+
+# Convenience name for target.
+g2o_customBundle: CMakeFiles/g2o_customBundle.dir/rule
+
+.PHONY : g2o_customBundle
+
+# clean rule for target.
+CMakeFiles/g2o_customBundle.dir/clean:
+	$(MAKE) -f CMakeFiles/g2o_customBundle.dir/build.make CMakeFiles/g2o_customBundle.dir/clean
+.PHONY : CMakeFiles/g2o_customBundle.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/g2o_customBundle.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ParseCmd.dir
+
+# All Build rule for target.
+CMakeFiles/ParseCmd.dir/all:
+	$(MAKE) -f CMakeFiles/ParseCmd.dir/build.make CMakeFiles/ParseCmd.dir/depend
+	$(MAKE) -f CMakeFiles/ParseCmd.dir/build.make CMakeFiles/ParseCmd.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target ParseCmd"
+.PHONY : CMakeFiles/ParseCmd.dir/all
+
+# Include target in all.
+all: CMakeFiles/ParseCmd.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ParseCmd.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ParseCmd.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/ParseCmd.dir/rule
+
+# Convenience name for target.
+ParseCmd: CMakeFiles/ParseCmd.dir/rule
+
+.PHONY : ParseCmd
+
+# clean rule for target.
+CMakeFiles/ParseCmd.dir/clean:
+	$(MAKE) -f CMakeFiles/ParseCmd.dir/build.make CMakeFiles/ParseCmd.dir/clean
+.PHONY : CMakeFiles/ParseCmd.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ParseCmd.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/BALProblem.dir
+
+# All Build rule for target.
+CMakeFiles/BALProblem.dir/all:
+	$(MAKE) -f CMakeFiles/BALProblem.dir/build.make CMakeFiles/BALProblem.dir/depend
+	$(MAKE) -f CMakeFiles/BALProblem.dir/build.make CMakeFiles/BALProblem.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target BALProblem"
+.PHONY : CMakeFiles/BALProblem.dir/all
+
+# Include target in all.
+all: CMakeFiles/BALProblem.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/BALProblem.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/BALProblem.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuchen/SLAMbook/ch10/g2o_custombundle/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/BALProblem.dir/rule
+
+# Convenience name for target.
+BALProblem: CMakeFiles/BALProblem.dir/rule
+
+.PHONY : BALProblem
+
+# clean rule for target.
+CMakeFiles/BALProblem.dir/clean:
+	$(MAKE) -f CMakeFiles/BALProblem.dir/build.make CMakeFiles/BALProblem.dir/clean
+.PHONY : CMakeFiles/BALProblem.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/BALProblem.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

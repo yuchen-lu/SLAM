@@ -11,8 +11,12 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.9.6/CMakeCCompiler.cmake"
   "CMakeFiles/3.9.6/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.9.6/CMakeSystem.cmake"
+  "../cmake_modules/FindCholmod.cmake"
+  "../cmake_modules/FindEigen3.cmake"
+  "../cmake_modules/FindG2O.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CMakeCInformation.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CMakeCXXInformation.cmake"
+  "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CMakeCommonLanguageInclude.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CMakeFindCodeBlocks.cmake"
@@ -20,10 +24,14 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CMakeLanguageInformation.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CMakeSystemSpecificInformation.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CheckCXXCompilerFlag.cmake"
+  "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CheckCXXSourceCompiles.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Compiler/GNU-C.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Compiler/GNU-CXX.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Compiler/GNU.cmake"
+  "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/FindPackageHandleStandardArgs.cmake"
+  "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/FindPackageMessage.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Platform/Linux-GNU-C.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Platform/Linux-GNU-CXX.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Platform/Linux-GNU.cmake"
@@ -45,4 +53,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/g2o_customBundle.dir/DependInfo.cmake"
+  "CMakeFiles/ParseCmd.dir/DependInfo.cmake"
+  "CMakeFiles/BALProblem.dir/DependInfo.cmake"
   )

@@ -1,17 +1,18 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(g2o_custombundle)
+project(g2o_customBundle)
 set(CMAKE_BUILD_TYPE "Release")
 set( CMAKE_CXX_FLAGS "-O3" )
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
+### Make sure put g2o in cmake_modules!!
+# uncommon lib, locate FindXXX.cmake
 
-SET( G2O_ROOT /usr/local/include/g2o )
 
+Find_Package(G2O REQUIRED)
 Find_Package(Eigen3 REQUIRED)
-
 Find_Package(Cholmod REQUIRED)
-FIND_PACKAGE( G2O )
+
 include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
@@ -33,5 +34,6 @@ message("find cholmod in " ${CHOLMOD_INCLUDE_DIR})
 add_library(BALProblem SHARED ${PROJECT_SOURCE_DIR}/common/BALProblem.cpp)
 add_library(ParseCmd SHARED ${PROJECT_SOURCE_DIR}/common/flags/command_args.cpp)
 
-add_executable(${PROJECT_NAME} g2o_bundle.cpp test.cpp)
+add_executable(${PROJECT_NAME} g2o_bundle.cpp)
 
+target_link_libraries(${PROJECT_NAME} ${G2O_LIBS} ${CHOLMOD_LIBRARIES} BALProblem ParseCmd)
