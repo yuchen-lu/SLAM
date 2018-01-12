@@ -3,6 +3,9 @@
 //
 
 
+
+
+
 #include <Eigen/StdVector>
 #include <Eigen/Core>
 
@@ -36,3 +39,20 @@
 #include "g2o_bal_class.h"
 
 
+// solve g2o
+
+
+
+typedef g2o::BlockSolver<g2o::BlockSolverTraits<9,3> > BalBlockSolver;
+
+void SetSolverOptionsFromFlags(BALProblem* bal_problem, const BundleParams& params,
+ g2o::SparseOptimizer* optimizer)
+{
+    BalBlockSolver* solver_ptr;
+    g2o::LinearSolver<BalBlockSolver::PoseMatrixType >* linearSolver = 0;
+
+    // use dense calculate method
+    if (params.linear_solver == "dense_schur"){
+        linearSolver = new g2o::LinearSolverDense<BalBlockSolver::PoseMatrixType >();
+    }
+}

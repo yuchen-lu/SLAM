@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ch10.dir/g2o_custombundle/common/flags/command_args.cpp.o CMakeFiles/ch10.dir/g2o_custombundle/common/BALProblem.cpp.o CMakeFiles/ch10.dir/g2o_custombundle/g2o_bundle.cpp.o  -o ch10 
