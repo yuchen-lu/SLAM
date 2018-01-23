@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yuchen/SLAMbook/ch11/pose_graph_g2o_SE3.cpp" "/home/yuchen/SLAMbook/ch11/cmake-build-debug/CMakeFiles/pose_graph_g2o_SE3.dir/pose_graph_g2o_SE3.cpp.o"
+  "/home/yuchen/SLAMbook/ch11/pose_graph_g2o_lie_algera.cpp" "/home/yuchen/SLAMbook/ch11/cmake-build-debug/CMakeFiles/lie_alg.dir/pose_graph_g2o_lie_algera.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -std=c++11 -O3 -DNDEBUG  -rdynamic CMakeFiles/lie_alg.dir/pose_graph_g2o_lie_algera.cpp.o  -o lie_alg 

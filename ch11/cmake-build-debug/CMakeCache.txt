@@ -195,6 +195,9 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Single output directory for building all executables.
 EXECUTABLE_OUTPUT_PATH:PATH=
 
+//The directory containing a CMake configuration file for Eigen3.
+Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
+
 //Path to a library.
 G2O_CLI_LIBRARY:FILEPATH=/usr/local/lib/libg2o_cli.so
 

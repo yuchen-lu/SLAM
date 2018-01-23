@@ -34,6 +34,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Platform/Linux.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Platform/UnixPaths.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/ProcessorCount.cmake"
+  "/usr/lib/cmake/eigen3/Eigen3Config.cmake"
   )
 
 # The corresponding makefile is:
@@ -49,5 +50,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/lie_alg.dir/DependInfo.cmake"
   "CMakeFiles/pose_graph_g2o_SE3.dir/DependInfo.cmake"
   )

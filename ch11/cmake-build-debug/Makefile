@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named lie_alg
+
+# Build rule for target.
+lie_alg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lie_alg
+.PHONY : lie_alg
+
+# fast build rule for target.
+lie_alg/fast:
+	$(MAKE) -f CMakeFiles/lie_alg.dir/build.make CMakeFiles/lie_alg.dir/build
+.PHONY : lie_alg/fast
+
+#=============================================================================
 # Target rules for targets named pose_graph_g2o_SE3
 
 # Build rule for target.
@@ -150,6 +163,33 @@ pose_graph_g2o_SE3.cpp.s:
 	$(MAKE) -f CMakeFiles/pose_graph_g2o_SE3.dir/build.make CMakeFiles/pose_graph_g2o_SE3.dir/pose_graph_g2o_SE3.cpp.s
 .PHONY : pose_graph_g2o_SE3.cpp.s
 
+pose_graph_g2o_lie_algera.o: pose_graph_g2o_lie_algera.cpp.o
+
+.PHONY : pose_graph_g2o_lie_algera.o
+
+# target to build an object file
+pose_graph_g2o_lie_algera.cpp.o:
+	$(MAKE) -f CMakeFiles/lie_alg.dir/build.make CMakeFiles/lie_alg.dir/pose_graph_g2o_lie_algera.cpp.o
+.PHONY : pose_graph_g2o_lie_algera.cpp.o
+
+pose_graph_g2o_lie_algera.i: pose_graph_g2o_lie_algera.cpp.i
+
+.PHONY : pose_graph_g2o_lie_algera.i
+
+# target to preprocess a source file
+pose_graph_g2o_lie_algera.cpp.i:
+	$(MAKE) -f CMakeFiles/lie_alg.dir/build.make CMakeFiles/lie_alg.dir/pose_graph_g2o_lie_algera.cpp.i
+.PHONY : pose_graph_g2o_lie_algera.cpp.i
+
+pose_graph_g2o_lie_algera.s: pose_graph_g2o_lie_algera.cpp.s
+
+.PHONY : pose_graph_g2o_lie_algera.s
+
+# target to generate assembly for a file
+pose_graph_g2o_lie_algera.cpp.s:
+	$(MAKE) -f CMakeFiles/lie_alg.dir/build.make CMakeFiles/lie_alg.dir/pose_graph_g2o_lie_algera.cpp.s
+.PHONY : pose_graph_g2o_lie_algera.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -158,10 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... lie_alg"
 	@echo "... pose_graph_g2o_SE3"
 	@echo "... pose_graph_g2o_SE3.o"
 	@echo "... pose_graph_g2o_SE3.i"
 	@echo "... pose_graph_g2o_SE3.s"
+	@echo "... pose_graph_g2o_lie_algera.o"
+	@echo "... pose_graph_g2o_lie_algera.i"
+	@echo "... pose_graph_g2o_lie_algera.s"
 .PHONY : help
 
 

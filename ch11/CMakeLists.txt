@@ -5,6 +5,9 @@ set( CMAKE_CXX_FLAGS "-O3" )
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 Find_Package(G2O REQUIRED)
+Find_Package(Eigen3 REQUIRED)
+# Eigen
+include_directories( "/usr/include/eigen3" )
 
 include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
@@ -16,6 +19,9 @@ SET(G2O_LIBS g2o_cli g2o_ext_freeglut_minimal g2o_simulator g2o_solver_slam2d_li
         g2o_solver_csparse g2o_solver_structure_only g2o_csparse_extension g2o_opengl_helper g2o_solver_dense
         g2o_stuff g2o_types_sclam2d g2o_parser g2o_solver_pcg g2o_types_data g2o_types_sim3 cxsparse )
 
+include_directories(${EIGEN3_INCLUDE_DIR})
+
 
 add_executable(${PROJECT_NAME} pose_graph_g2o_SE3.cpp)
+add_executable(lie_alg pose_graph_g2o_lie_algera.cpp)
 target_link_libraries(${PROJECT_NAME} ${G2O_LIBS} )

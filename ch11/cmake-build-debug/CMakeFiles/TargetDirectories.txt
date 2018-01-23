@@ -1,3 +1,4 @@
 /home/yuchen/SLAMbook/ch11/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/yuchen/SLAMbook/ch11/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/yuchen/SLAMbook/ch11/cmake-build-debug/CMakeFiles/lie_alg.dir
 /home/yuchen/SLAMbook/ch11/cmake-build-debug/CMakeFiles/pose_graph_g2o_SE3.dir
