@@ -132,3 +132,10 @@ public:
 
 };
 
+
+
+// compute error
+virtual void computeError()
+{
+    Sophus::SE3 v1 = (static_cast<VertexSE3LieAlgebra*> (_vertices[0]));
+}
