@@ -40,12 +40,21 @@ int main( int argc, char** argv)
   cout<< matrix_33.transpose() << endl; // sum(); trace(); inverse();determinant();10*matrix_33;
   
   //eigen values &vectors
-  Eigen::SelfAdjointEigenSolver<Eigen::Matrix3d> eigen_solver(matrix_33);
+  Eigen::SelfAdjointEigenSolver<Eigen::Matrix3d> eigen_solver(matrix_33.transpose()*matrix_33); // only used when matrix ^T = matrix itself
   cout << "Eigen values=" << eigen_solver.eigenvalues() << endl;
   cout << "Eigen vectors=" << eigen_solver.eigenvectors() <<endl;
-  
-  
-  
+
+  Eigen::MatrixXf randomcheck=Eigen::MatrixXf::Random(4,4);
+  cout<<"********************"<<endl;
+  Eigen::EigenSolver<Eigen::MatrixXf> YCsolver;
+  YCsolver.compute(randomcheck,  /* computeEigenvectors = */ true);
+  cout<<"eigenvalues of randomcheck are:"<<YCsolver.eigenvalues().transpose()<<endl;
+  cout<<"1st eigenvector of randomcheck is:"<<YCsolver.eigenvectors().col(0)<<endl;
+  cout<<"whats gonna happen without col(0):\n"<<YCsolver.eigenvectors()<<endl;
+
+
+
+
   // solve matrix_NN * x= v_Nd
   Eigen::Matrix< double, MATRIX_SIZE, MATRIX_SIZE> matrix_NN;
   matrix_NN = Eigen::MatrixXd::Random( MATRIX_SIZE, MATRIX_SIZE);
@@ -53,6 +62,7 @@ int main( int argc, char** argv)
   v_Nd = Eigen::MatrixXd::Random(MATRIX_SIZE,1);
   
   clock_t time_stt=clock();//timer
+
   //inverse method
   Eigen::Matrix<double,MATRIX_SIZE,1> x=matrix_NN.inverse()*v_Nd;
   cout <<"time use in normal invers is " << 1000* (clock()-time_stt)/(double)CLOCKS_PER_SEC <<"ms" << endl;
@@ -61,7 +71,9 @@ int main( int argc, char** argv)
   time_stt = clock();
   x =matrix_NN.colPivHouseholderQr().solve(v_Nd);
   cout << "time used in qr decompo is " << 1000* (clock()-time_stt)/(double)CLOCKS_PER_SEC <<"ms" << endl;
-  
+
+
+
   return 0;
   
   

@@ -57,20 +57,5 @@ int main( int argc, char**argv)
   cout<<"(1,0,0) after rotation =" <<v_rotated.transpose()<<endl;
   
   return 0;
-  
-  
-  
-  
- 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
 }
