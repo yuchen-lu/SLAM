@@ -12,7 +12,7 @@ int main( int argc, char**argv)
   Eigen::Matrix3d rotation_matrix = Eigen::Matrix3d::Identity();
   cout<<"rotation matrix=\n" <<rotation_matrix <<endl; //transform to matrix
 
-  Eigen::AngleAxisd rotation_vector(M_PI/4, Eigen::Vector3d(0,0,1)); // 45 along z axis
+  Eigen::AngleAxisd rotation_vector(M_PI/4, Eigen::Vector3d(0,0,1)); // (theta,n)45 along z axis
   cout .precision(3);
   cout<<"rotation matrix=\n" <<rotation_vector.matrix() <<endl; //transform to matrix
   rotation_matrix = rotation_vector.toRotationMatrix();
@@ -33,6 +33,7 @@ int main( int argc, char**argv)
   
   
   //isometry
+  // how to construct T from R,t
   Eigen::Isometry3d T=Eigen::Isometry3d::Identity(); //actually 4*4 matrix
   T.rotate(rotation_vector); 
   T.pretranslate (Eigen::Vector3d (1,3,4)); //move
@@ -44,7 +45,9 @@ int main( int argc, char**argv)
   
   
   //quaternion
-  //give AngleAxis to quaternion directly
+  //Warning
+//  Note the order of the arguments: the real w coefficient first, while internally the coefficients are stored in the following order: [x, y, z, w]
+        //give AngleAxis to quaternion directly
   Eigen::Quaterniond q= Eigen::Quaterniond(rotation_vector);
   cout<<"quaternion =\n"<<q.coeffs()<<endl; //coeffs(x,y,z,w),w is real value
   
@@ -53,7 +56,7 @@ int main( int argc, char**argv)
   cout<<"quaternion =\n"<<q.coeffs()<<endl;
   
   //use quaertion to roate a vector, using multiply
-  v_rotated =q*v; //qvq^-1
+  v_rotated =q*v; //qvq^-1 in math!
   cout<<"(1,0,0) after rotation =" <<v_rotated.transpose()<<endl;
   
   return 0;
