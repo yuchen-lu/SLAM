@@ -1,10 +1,10 @@
 
 
 // overview: get a Map !
-//known five rgb-d imgs and camera intrinstics and extrinsics(Twc in pose.txt)
+//known five rgb-d imgs and camera intrinstics and extrinsics(T_wc in pose.txt)
 // using imgs and camera intrins ----> any pixel location in CAMERA coords
 // using extrins(camera pose), find these pixel in WORLD coords
-// list all pixels' world coords, create sth like a map
+// list all pixels' world coords, create a map
 
 // pose format: [x,y,z,qx,qy,qz,qw] ,where qw is real
 // goal (1) get one rgb-d corresponding pcl using intrinstics
@@ -34,6 +34,8 @@ int main( int argc, char** argv)
   // --------highlight: see how to call vector and its type!
   
   vector<cv::Mat> colorImgs, depthImgs; // colorImgs and depthImgs
+
+
 //vector<Eigen::Isometry3d,Eigen::aligned_allocator<Eigen::Isometry3d>> poses; // camera poses
   vector<Eigen::Isometry3d> poses;
   ifstream fin("/home/yuchen/SLAMbook/ch5/joinMap/build/pose.txt");
@@ -42,26 +44,22 @@ int main( int argc, char** argv)
     cerr<<"please run this file in the folder with pose.txt"<<endl;
     return 1;
   }
-  
-  
-  
+
   //----highlight: how to process multiple imgs
   for ( int i=0; i<5; i++)
   {
-    
+
     boost::format fmt( "./%s/%d.%s");// image file format
-    
-    
     colorImgs.push_back( cv::imread( (fmt%"color"%(i+1)%"png").str() ));
     depthImgs.push_back( cv::imread( (fmt%"depth"%(i+1)%"pgm").str(), -1 )); // use -1 to read original image
-    
- // transform pose from Quaternion and translation vector to isometry matrix   
+
+    // transform pose from Quaternion and translation vector to isometry matrix(q&pho--->T)
      double data[7]={0};
      for ( auto& d:data )
-	fin>>d;
-     Eigen::Quaterniond q( data[6], data[3], data[4], data[5]);
+        fin>>d;
+     Eigen::Quaterniond q( data[6], data[3], data[4], data[5]); // q_real,q1,q2,q3
      Eigen::Isometry3d T(q);
-     T.pretranslate( Eigen::Vector3d( data[0], data[1], data[2]));
+     T.pretranslate( Eigen::Vector3d( data[0], data[1], data[2])); // first three are translate
      poses.push_back( T);
 
    
@@ -89,34 +87,36 @@ int main( int argc, char** argv)
       cv::Mat depth = depthImgs[i];
       Eigen::Isometry3d T =poses[i];
       for ( int v=0; v<color.rows; v++)
-	for ( int u=0; u<color.cols; u++)
-	{
-	  unsigned int d = depth.ptr<unsigned short> (v)[u];// depth value
-	  if ( d==0) continue ; // if 0, didnt detect
+        for ( int u=0; u<color.cols; u++)
+	    {
+	        unsigned int d = depth.ptr<unsigned short> ( v )[u];// depth value
+	        if ( d==0 ) continue ; // if 0, didnt detect
 	
 	
-// calculate positions in camera coods of pixels with (u,v) and depth d	
-// then transform to world coods using extrins(pose)
+            // commpute P_camera of pixel at (u,v) with depth d
+            // then compute P_world from P_camera usint pose T
 
-	Eigen::Vector3d point;
-	  point[2] = double(d)/depthScale; 
-	  point[0] = (u-cx)*point[2]/fx; // x coods in camera
-	  point[1] = (v-cy)*point[2]/fy; // y coods in camera
- // why??
-	  Eigen::Vector3d pointWorld = T*point;
-	  
-	  PointT p;
-	  p.x = pointWorld[0];
-	  p.y = pointWorld[1];
-	  p.z = pointWorld[2];
-	  p.b = color.data[v*color.step+u*color.channels()];
-	  p.g = color.data[v*color.step+u*color.channels()+1];
-	  p.r = color.data[v*color.step+u*color.channels()+2];
-	  pointCloud->points.push_back(p);
-	 
-	  
-	  
-	}
+            // find camera coords
+            Eigen::Vector3d point;
+            point[2] = double(d)/depthScale;
+            point[0] = (u-cx)*point[2]/fx; // x coods in camera
+            point[1] = (v-cy)*point[2]/fy; // y coods in camera
+
+            //find world coords; why???
+            Eigen::Vector3d pointWorld = (T.inverse())*point;
+
+            PointT p;
+            p.x = pointWorld[0];
+            p.y = pointWorld[1];
+            p.z = pointWorld[2];
+            p.b = color.data[v*color.step+u*color.channels()];
+            p.g = color.data[v*color.step+u*color.channels()+1];
+            p.r = color.data[v*color.step+u*color.channels()+2];
+            pointCloud->points.push_back(p);
+
+
+
+        }
     }
       
       

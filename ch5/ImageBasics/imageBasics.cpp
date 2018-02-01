@@ -55,9 +55,8 @@ int main ( int argc, char**argv)
 
       //---------------highlight: how to read each pixel in a loop
       // visit x,y pixel
-      //using cv::Mat::ptr to get image ROW ptr
-      // dont understand ??
-      unsigned char* row_ptr = image.ptr<unsigned char> (y); // row_ptr is yth row's row_ptr    // mat ptr Returns a pointer to the specified matrix row. 
+      //using cv::Mat::ptr returns a ptr to a specific row
+      unsigned char* row_ptr = image.ptr<unsigned char> (y); // row_ptr is yth row's row_ptr    // mat ptr Returns a pointer to the specified matrix row.
       unsigned char* data_ptr = &row_ptr[x*image.channels()]; // data_ptr points to next visiting pixel data
 //  cout<<*data_ptr<<endl;
       
