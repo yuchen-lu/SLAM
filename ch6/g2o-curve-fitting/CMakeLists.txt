@@ -18,9 +18,9 @@ include_directories(
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_DIRS} )
 
-add_executable( curve_fitting main.cpp )
+add_executable( g2o_curve_fitting main.cpp )
 # 与G2O和OpenCV链接
-target_link_libraries( curve_fitting 
+target_link_libraries( g2o_curve_fitting
     ${OpenCV_LIBS}
     g2o_core g2o_stuff
 )
