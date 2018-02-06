@@ -59,9 +59,8 @@ int main ( int argc, char**argv)
   for (int i=0; i<descriptors_1.rows;i++)
   {
     double dist = matches[i].distance;
-    if(dist <min_dist) min_dist =dist;
+    if(dist <min_dist) min_dist = dist;
     if(dist >max_dist) max_dist = dist;
-
   }
   
   printf("--max dist: %f \n",max_dist);
