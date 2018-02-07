@@ -1,3 +1,0 @@
-/home/yuchen/SLAMbook/ch4/UseSophus/build/CMakeFiles/edit_cache.dir
-/home/yuchen/SLAMbook/ch4/UseSophus/build/CMakeFiles/rebuild_cache.dir
-/home/yuchen/SLAMbook/ch4/UseSophus/build/CMakeFiles/UseSophus.dir

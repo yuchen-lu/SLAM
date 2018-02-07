@@ -144,7 +144,7 @@ Mat& R, Mat& t)
   
   // compute essential matrix E
   Point2d principal_point(325.1, 249.7); // optical centre, TUM dataset calibration value
-    double focal_length = 521; // focal , tum dataset calibration
+  int focal_length = 521; // focal , tum dataset calibration
   Mat essential_matrix = findEssentialMat(points1,points2,focal_length,principal_point,RANSAC);
   cout<<"essential matrix is "<<endl<<essential_matrix<<endl;
   

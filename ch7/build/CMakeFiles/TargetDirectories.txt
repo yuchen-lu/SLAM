@@ -1,3 +1,0 @@
-/home/yuchen/SLAMbook/ch7/build/CMakeFiles/edit_cache.dir
-/home/yuchen/SLAMbook/ch7/build/CMakeFiles/rebuild_cache.dir
-/home/yuchen/SLAMbook/ch7/build/CMakeFiles/feature_extraction.dir
