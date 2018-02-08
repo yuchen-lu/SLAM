@@ -23,7 +23,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pose_estimation_2d2d.kdev4" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pose_estimation_2d2d.kdev4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pose_estimation_2d2d.kdev4">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="163" column="53" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="163" selection-end-column="53" />
+            <state relative-caret-position="522">
+              <caret line="146" column="60" lean-forward="true" selection-start-line="146" selection-start-column="60" selection-end-line="146" selection-end-column="60" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <marker date="1517960240029" expanded="true" signature="2194:3804" ph="..." />
@@ -243,12 +243,12 @@
       <option name="presentableId" value="Default" />
       <updated>1517877234137</updated>
       <workItem from="1517877235332" duration="240000" />
-      <workItem from="1517879046773" duration="11821000" />
+      <workItem from="1517879046773" duration="13039000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12061000" />
+    <option name="totallyTimeSpent" value="13279000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -362,22 +362,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="163" column="53" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="163" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1517960240029" expanded="true" signature="2194:3804" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pose_estimation_2d2d.kdev4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="146" column="60" lean-forward="true" selection-start-line="146" selection-start-column="60" selection-end-line="146" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1517960240029" expanded="true" signature="2194:3804" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
