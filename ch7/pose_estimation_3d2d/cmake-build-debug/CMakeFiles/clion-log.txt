@@ -1,0 +1,20 @@
+/home/yuchen/clion-2017.3.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/yuchen/SLAMbook/ch7/pose_estimation_3d2d
+CMake Error at CMakeLists.txt:13 (find_package):
+  By not providing "FindG2O.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "G2O", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "G2O" with any of
+  the following names:
+
+    G2OConfig.cmake
+    g2o-config.cmake
+
+  Add the installation prefix of "G2O" to CMAKE_PREFIX_PATH or set "G2O_DIR"
+  to a directory containing one of the above files.  If "G2O" provides a
+  separate development package or SDK, be sure it has been installed.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/yuchen/SLAMbook/ch7/pose_estimation_3d2d/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/home/yuchen/SLAMbook/ch7/pose_estimation_3d2d/cmake-build-debug/CMakeFiles/CMakeError.log".
