@@ -122,7 +122,7 @@ void bundleAdjustment(
     typedef g2o::BlockSolver< g2o::BlockSolverTraits<6,3> > Block; // pose is 6d, landmark is 3d
     // linear fnc solver setup
     //    unique_ptr<Block::LinearSolverType> linearSolver = new g2o::LinearSolverCSparse<Block::PoseMatrixType>();
-    std::unique_ptr<Block::LinearSolverType> linearSolver ( new g2o::LinearSolverCSparse<Block::PoseMatrixType>());
+    unique_ptr<Block::LinearSolverType> linearSolver ( new g2o::LinearSolverCSparse<Block::PoseMatrixType>());
 
    // Block::LinearSolverType* linearSolver = new g2o::LinearSolverCSparse<Block::PoseMatrixType>();
     // block solver
@@ -155,7 +155,7 @@ void bundleAdjustment(
         //****vertex for landmark
     int index =1;
     for ( const Point3f p:points_3d) // landmarks
-    {   // ???????
+    {
         g2o::VertexSBAPointXYZ* point = new g2o::VertexSBAPointXYZ();
         point->setId(index++);
         point->setEstimate(Eigen::Vector3d(p.x, p.y, p.z));

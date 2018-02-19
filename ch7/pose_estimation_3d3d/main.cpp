@@ -93,95 +93,144 @@ void pose_estimation_3d3d
 
 
 
-//void bundleAdjustment(
-//        const vector<Point3f> pts1,
-//        const vector<Point3f> pts2,
-//        const Mat& K,
-//        Mat& R, Mat& t)
-//{
-//    // *****initilize g2o
-//    typedef g2o::BlockSolver< g2o::BlockSolverTraits<6,3> > Block; // pose is 6d, landmark is 3d
-//    // linear fnc solver setup
-//    //    unique_ptr<Block::LinearSolverType> linearSolver = new g2o::LinearSolverCSparse<Block::PoseMatrixType>();
-//    unique_ptr<Block::LinearSolverType> linearSolver ( new g2o::LinearSolverCSparse<Block::PoseMatrixType>());
-//
-//    // Block::LinearSolverType* linearSolver = new g2o::LinearSolverCSparse<Block::PoseMatrixType>();
-//    // block solver
-//    // Block* solver_ptr = new Block (linearSolver);
-//    // unique_ptr<Block> solver_ptr ( new Block ( linearSolver));
-//    unique_ptr<Block> solver_ptr ( new Block ( std::move(linearSolver)));     // 矩阵块求解器
-//    // g2o::OptimizationAlgorithmLevenberg* solver = new g2o::OptimizationAlgorithmLevenberg(solver_ptr);
-//    g2o::OptimizationAlgorithmLevenberg* solver = new g2o::OptimizationAlgorithmLevenberg ( std::move(solver_ptr));
-//
-//    g2o::SparseOptimizer optimizer;
-//    optimizer.setAlgorithm(solver);
-//
-//    //********end of initilization
-//
-//    //vertex
-//    //***vertex for camera pose
-//    g2o::VertexSE3Expmap* pose = new g2o::VertexSE3Expmap(); // camera pose
-//    Eigen::Matrix3d R_mat;
-//    R_mat<<
-//         R.at<double> ( 0,0 ), R.at<double> ( 0,1 ), R.at<double> ( 0,2 ),
-//            R.at<double> ( 1,0 ), R.at<double> ( 1,1 ), R.at<double> ( 1,2 ),
-//            R.at<double> ( 2,0 ), R.at<double> ( 2,1 ), R.at<double> ( 2,2 );
-//    pose->setId ( 0 );
-//    pose->setEstimate( g2o::SE3Quat(
-//            R_mat,
-//            Eigen::Vector3d(t.at<double> (0,0), t.at<double>(1,0), t.at<double>(2,0))
-//    ));
-//    optimizer.addVertex ( pose );
-//
-//    //****vertex for landmark
-//    int index =1;
-//    for ( const Point3f p:pts1) // landmarks
-//    {
-//        g2o::VertexSBAPointXYZ* point = new g2o::VertexSBAPointXYZ();
-//        point->setId(index++);
-//        point->setEstimate(Eigen::Vector3d(p.x, p.y, p.z));
-//        point->setMarginalized( true); // g2o has to setup marg, see later in ch10
-//        optimizer.addVertex(point);
-//    }
-//
-//
-//    // parameter: camera intrinsics
-//    g2o::CameraParameters* cameraK = new g2o::CameraParameters(
-//            K.at<double> (0,0), Eigen::Vector2d(K.at<double>(0,2), K.at<double>(1,2))
-//            , 0);
-//    cameraK->setId(0);
-//    optimizer.addParameter(cameraK);
-//
-//
-//
-//    // edges
-//    index = 1;
-//    for (const Point3f p:pts2)
-//    {
-//        g2o::EdgeProjectXYZ2UV* edge = new g2o::EdgeProjectXYZ2UV();
-//        edge->setId ( index );
-//        edge->setVertex (0, dynamic_cast<g2o::VertexSBAPointXYZ*>(optimizer.vertex(index)));
-//        edge->setVertex (1, pose);
-//        edge->setMeasurement (Eigen::Vector3d( p.x, p.y, p.z));
-//        edge->setParameterId ( 0,0 );
-//        edge->setInformation(Eigen::Matrix3d::Identity());
-//        optimizer.addEdge(edge);
-//        index++;
-//    }
-//
-//    chrono::steady_clock::time_point t1 = chrono::steady_clock::now();
-//    optimizer.setVerbose( true);
-//    optimizer.initializeOptimization();
-//    optimizer.optimize (100);
-//    chrono::steady_clock::time_point t2 = chrono::steady_clock::now();
-//    chrono::duration<double> time_used = chrono::duration_cast<chrono::duration<double>>(t2-t1);
-//    cout<<"optimization costs time:"<<time_used.count()<<" seconds, how about that??"<<endl;
-//
-//    cout<<endl<<"after optimzation:"<<endl;
-//    cout<<"T = "<<endl<<Eigen::Isometry3d( pose->estimate() ).matrix() <<endl;
-//
-//
-//}
+
+
+// define 3d to 3d edge
+class EdgeProjectXYZRGBDPoseOnly : public g2o::BaseUnaryEdge<3, Eigen::Vector3d, g2o::VertexSE3Expmap>
+{
+public:
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
+    EdgeProjectXYZRGBDPoseOnly( const Eigen::Vector3d& point):
+            _point(point){}
+
+    virtual void computeError()
+    {
+        const g2o::VertexSE3Expmap* pose = static_cast<const g2o::VertexSE3Expmap*>
+        (_vertices[0]);
+        // measurement is p; point is p'
+        _error = _measurement - pose ->estimate().map(_point);
+    }
+
+    virtual void linearozeOplus()
+    {
+        g2o::VertexSE3Expmap* pose = static_cast<g2o::VertexSE3Expmap *>
+        (_vertices[0]);
+        g2o::SE3Quat T(pose->estimate());
+        Eigen::Vector3d xyz_trans = T.map(_point);
+        double x = xyz_trans[0];
+        double y = xyz_trans[1];
+        double z = xyz_trans[2];
+
+        _jacobianOplusXi(0,0) = 0;
+        _jacobianOplusXi(0,1) = -z;
+        _jacobianOplusXi(0,2) = y;
+        _jacobianOplusXi(0,3) = -1;
+        _jacobianOplusXi(0,4) = 0;
+        _jacobianOplusXi(0,5) = 0;
+
+        _jacobianOplusXi(1,0) = z;
+        _jacobianOplusXi(1,1) = 0;
+        _jacobianOplusXi(1,2) = -x;
+        _jacobianOplusXi(1,3) = 0;
+        _jacobianOplusXi(1,4) = -1;
+        _jacobianOplusXi(1,5) = 0;
+
+        _jacobianOplusXi(2,0) = -y;
+        _jacobianOplusXi(2,1) = x;
+        _jacobianOplusXi(2,2) = 0;
+        _jacobianOplusXi(2,3) = 0;
+        _jacobianOplusXi(2,4) = 0;
+        _jacobianOplusXi(2,5) = -1;
+    }
+
+    bool read( istream& in) {}
+    bool write( ostream& out) const{}
+
+protected:
+    Eigen::Vector3d _point;
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void bundleAdjustment(
+        const vector<Point3f> pts1,
+        const vector<Point3f> pts2,
+        const Mat& K,
+        Mat& R, Mat& t)
+{
+    // *****initilize g2o
+    typedef g2o::BlockSolver< g2o::BlockSolverTraits<6,3> > Block; // pose is 6d, landmark is 3d
+    // linear fnc solver setup
+    //    unique_ptr<Block::LinearSolverType> linearSolver = new g2o::LinearSolverCSparse<Block::PoseMatrixType>();
+    unique_ptr<Block::LinearSolverType> linearSolver ( new g2o::LinearSolverCSparse<Block::PoseMatrixType>());
+
+    // Block::LinearSolverType* linearSolver = new g2o::LinearSolverCSparse<Block::PoseMatrixType>();
+    // block solver
+    // Block* solver_ptr = new Block (linearSolver);
+    // unique_ptr<Block> solver_ptr ( new Block ( linearSolver));
+    unique_ptr<Block> solver_ptr ( new Block ( std::move(linearSolver)));     // 矩阵块求解器
+    // g2o::OptimizationAlgorithmLevenberg* solver = new g2o::OptimizationAlgorithmLevenberg(solver_ptr);
+    g2o::OptimizationAlgorithmLevenberg* solver = new g2o::OptimizationAlgorithmLevenberg ( std::move(solver_ptr));
+
+    g2o::SparseOptimizer optimizer;
+    optimizer.setAlgorithm(solver);
+
+    //********end of initilization
+
+    //vertex
+    //***vertex for camera pose
+    g2o::VertexSE3Expmap* pose = new g2o::VertexSE3Expmap(); // camera pose
+
+    pose->setId ( 0 );
+    pose->setEstimate( g2o::SE3Quat( Eigen::Matrix3d::Identity(), Eigen::Vector3d(0,0,0)));
+    optimizer.addVertex ( pose );
+
+
+
+    // edges
+    int index = 1;
+    vector<EdgeProjectXYZRGBDPoseOnly*> edges;
+    for (size_t i=0; i<pts1.size(); i++)
+    {
+        EdgeProjectXYZRGBDPoseOnly* edge = new EdgeProjectXYZRGBDPoseOnly(
+                Eigen::Vector3d(pts2[i].x, pts2[i].y, pts2[i].z));
+        edge->setId( index );
+        edge->setVertex(0, dynamic_cast<g2o::VertexSE3Expmap*> (pose));
+        edge->setMeasurement( Eigen::Vector3d(pts1[i].x, pts1[i].y, pts1[i].z ));
+        edge->setInformation( Eigen::Matrix3d::Identity()* 1e4);
+        optimizer.addEdge(edge);
+        index++;
+        edges.push_back(edge);
+    }
+
+    chrono::steady_clock::time_point t1 = chrono::steady_clock::now();
+    optimizer.setVerbose( true);
+    optimizer.initializeOptimization();
+    optimizer.optimize (10);
+    chrono::steady_clock::time_point t2 = chrono::steady_clock::now();
+    chrono::duration<double> time_used = chrono::duration_cast<chrono::duration<double>>(t2-t1);
+    cout<<"optimization costs time:"<<time_used.count()<<" seconds, how about that??"<<endl;
+
+    cout<<endl<<"after optimzation:"<<endl;
+    cout<<"T = "<<endl<<Eigen::Isometry3d( pose->estimate() ).matrix() <<endl;
+
+
+}
 
 void find_feature_matches (
         const Mat& img_1, const Mat& img_2,
