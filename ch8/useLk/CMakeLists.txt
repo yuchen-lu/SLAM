@@ -1,9 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 project(uselk)
 
-#add c++ 11 std support
 set (CMAKE_CXX_FLAGS "-std=c++11")
-#set (CMAKE_BUILD_TYPE "Debug")
+set (CMAKE_BUILD_TYPE "Debug")
 
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_DIRS} )

@@ -20,28 +20,16 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CMakeLanguageInformation.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CMakeSystemSpecificInformation.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CMakeSystemSpecificInitialize.cmake"
-  "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CheckIncludeFile.cmake"
-  "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CheckLibraryExists.cmake"
-  "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/CheckSymbolExists.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Compiler/GNU-C.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Compiler/GNU-CXX.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Compiler/GNU.cmake"
-  "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/FindCUDA.cmake"
-  "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/FindCUDA/select_compute_arch.cmake"
-  "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/FindPackageHandleStandardArgs.cmake"
-  "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/FindPackageMessage.cmake"
-  "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/FindThreads.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Platform/Linux-GNU-C.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Platform/Linux-GNU-CXX.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Platform/Linux-GNU.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Platform/Linux.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/Platform/UnixPaths.cmake"
   "/home/yuchen/clion-2017.3.1/bin/cmake/share/cmake-3.9/Modules/ProcessorCount.cmake"
-  "/usr/local/share/OpenCV/OpenCVConfig-version.cmake"
-  "/usr/local/share/OpenCV/OpenCVConfig.cmake"
-  "/usr/local/share/OpenCV/OpenCVModules-release.cmake"
-  "/usr/local/share/OpenCV/OpenCVModules.cmake"
   )
 
 # The corresponding makefile is:
@@ -57,5 +45,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/uselk.dir/DependInfo.cmake"
+  "CMakeFiles/ch8.dir/DependInfo.cmake"
   )

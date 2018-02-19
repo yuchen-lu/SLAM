@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ch8.dir/directMethod/direct_sparse/main.cpp.o CMakeFiles/ch8.dir/useLk/main.cpp.o  -o ch8 
