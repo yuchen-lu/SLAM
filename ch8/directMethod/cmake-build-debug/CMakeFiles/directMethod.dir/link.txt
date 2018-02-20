@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/directMethod.dir/direct_sparse/main.cpp.o  -o directMethod 

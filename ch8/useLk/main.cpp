@@ -35,26 +35,26 @@ int main(int argc, char **argv) {
 
   string rgb_file, depth_file, time_rgb, time_depth;
   list< cv::Point2f> keypoints; // using list because track failed points will be deleted
-  Mat color, depth, last_color;
+  Mat colorimg, depthimg, last_colorimg;
   
   for (int index = 0; index<100; index++)
   {
     fin>>time_rgb>>rgb_file>>time_depth>>depth_file;
-    color = cv::imread(path_to_dataset+"/"+rgb_file);
-    depth = cv::imread(path_to_dataset+"/"+depth_file, -1);
+    colorimg = cv::imread(path_to_dataset+"/"+rgb_file);
+    depthimg = cv::imread(path_to_dataset+"/"+depth_file, -1);
     if (index == 0)
     {
       // extract FAST feature points to 1st frame
       vector<KeyPoint> kpts;
       cv::Ptr<cv::FastFeatureDetector> detector = cv::FastFeatureDetector::create();
-      detector->detect(color, kpts);
+      detector->detect(colorimg, kpts);
       for (auto kp:kpts)
 	    keypoints.push_back(kp.pt);
-      last_color = color;
+      last_colorimg = colorimg;
       continue;
     }
     
-    if(color.data ==nullptr || depth.data ==nullptr)
+    if(colorimg.data ==nullptr || depthimg.data ==nullptr)
       continue;
     
     // use LK to track feature points for other pixel
@@ -65,7 +65,7 @@ int main(int argc, char **argv) {
     vector<unsigned char> status;
     vector<float> error;
     chrono::steady_clock::time_point t1 = chrono::steady_clock::now();
-    cv::calcOpticalFlowPyrLK(last_color, color, prev_keypoints, next_keypoints,status, error);
+    cv::calcOpticalFlowPyrLK(last_colorimg, colorimg, prev_keypoints, next_keypoints,status, error);
     chrono::steady_clock::time_point t2 = chrono::steady_clock::now();
     chrono::duration<double> time_used = chrono::duration_cast<chrono::duration<double>>(t2-t1);
     cout<<"LK flow use : time    "<<time_used.count()<<"seconds"<<endl;
@@ -90,12 +90,12 @@ int main(int argc, char **argv) {
 
 
     // draw keypoints
-    cv::Mat img_show = color.clone();
+    cv::Mat img_show = colorimg.clone();
     for (auto kp:keypoints)
       cv::circle(img_show, kp, 10, cv::Scalar(0,240,0),1);
     cv::imshow("corners", img_show);
     cv::waitKey(0);
-    last_color = color;
+    last_colorimg = colorimg;
   
   }
     
