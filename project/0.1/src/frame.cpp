@@ -1,17 +1,22 @@
-#include "/home/yuchen/SLAMbook/project/0.1/include/myslam/frame.h"
+#include "myslam/frame.h"
 
 namespace myslam
 {
-  Frame::Frame()     // default constuctor
+  Frame::Frame()
   :id_(-1), time_stamp_(-1), camera_(nullptr)
-  {}
+  {
+
+  }
   
-  Frame::Frame(long id, double time_stamp, SE3 T_C_w, Camera::Ptr camera, Mat color, Mat depth)
+  Frame::Frame(long id, double time_stamp, SE3 T_c_w, Camera::Ptr camera, Mat color, Mat depth)
+  : id_(id), time_stamp_( time_stamp ), T_c_w_(T_c_w), camera_(camera), color_(color), depth_(depth)
   {
     
   }
-  
-  Frame::~Frame()  // noisy deconsturctor?
+
+
+    
+  Frame::~Frame()
   {
     
   }
@@ -57,8 +62,9 @@ namespace myslam
   {
     return T_c_w_.inverse().translation;
   }
+
   
-  bool Frame::isInFrame ( const Vector3d& pt_world)
+  bool Frame::isInFrame ( const Vector3d& pt_world )
   {
     Vetor3d p_cam = camera_->world2camera( pt_world, T_c_w_);
     if( p_cam(2,0)<0)
