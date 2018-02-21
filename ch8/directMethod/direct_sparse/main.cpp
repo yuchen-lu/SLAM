@@ -54,7 +54,7 @@ public:
     float y = x_local[1] * fy_/x_local[2]+ cy_;
 
     // check if x,y are in img
-    if( (x-4)<0 || (x+4) > image_->cols ||(y+4) > image_->rows)
+    if( x-4 <0 || (x+4) > image_->cols ||(y+4) > image_->rows||y-4<0)
     {
       _error(0,0) = 0.0;
       this->setLevel(1);
@@ -69,7 +69,7 @@ public:
   }
 
   // plus in manifold
-  virtual void linearize0plus( )
+  virtual void linearizeOplus( )
   {
     if ( level() == 1 )
     {
@@ -93,19 +93,19 @@ public:
 
     Eigen::Matrix<double,2,6> jacobian_uv_ksai;
 
-    jacobian_uv_ksai(0,0) = - x*y*invz_2*fx_;
-    jacobian_uv_ksai(0,1) = ( 1 + (x*x*invz_2) )*fx_;
-    jacobian_uv_ksai(0,2) = -y*invz*fx_;
-    jacobian_uv_ksai(0,3) = invz * fx_;
-    jacobian_uv_ksai(0,4) = 0;
-    jacobian_uv_ksai(0,5) = -x*invz_2*fx_;
+    jacobian_uv_ksai ( 0,0 ) = - x*y*invz_2 *fx_;
+    jacobian_uv_ksai ( 0,1 ) = ( 1+ ( x*x*invz_2 ) ) *fx_;
+    jacobian_uv_ksai ( 0,2 ) = - y*invz *fx_;
+    jacobian_uv_ksai ( 0,3 ) = invz *fx_;
+    jacobian_uv_ksai ( 0,4 ) = 0;
+    jacobian_uv_ksai ( 0,5 ) = -x*invz_2 *fx_;
 
-    jacobian_uv_ksai(1,0) = -(1+y*y*invz_2)*fy_;
-    jacobian_uv_ksai(1,1) = x*y*invz_2*fy_;
-    jacobian_uv_ksai(1,2) = x*invz*fy_;
-    jacobian_uv_ksai(1,3) = 0;
-    jacobian_uv_ksai(1,4) = invz* fy_;
-    jacobian_uv_ksai(1,0) = -y*invz_2* fy_;
+    jacobian_uv_ksai ( 1,0 ) = - ( 1+y*y*invz_2 ) *fy_;
+    jacobian_uv_ksai ( 1,1 ) = x*y*invz_2 *fy_;
+    jacobian_uv_ksai ( 1,2 ) = x*invz *fy_;
+    jacobian_uv_ksai ( 1,3 ) = 0;
+    jacobian_uv_ksai ( 1,4 ) = invz *fy_;
+    jacobian_uv_ksai ( 1,5 ) = -y*invz_2 *fy_;
 
     Eigen::Matrix<double,1,2> jacobian_pixel_uv;
     jacobian_pixel_uv (0,0) = (getPixelValue(u+1,v)-getPixelValue(u-1,v))/2;
@@ -123,9 +123,9 @@ public:
 
 protected:
   // get a gray scale value from referene img(bilinear interpolated)
-  /*inline*/ float getPixelValue (float x, float y)
+  inline float getPixelValue (float x, float y)
   {
-    uchar*data = & image_->data[ int(y) * image_->step + int(x)];
+    uchar* data = & image_->data[ int(y) * image_->step + int (x) ];
     float xx = x - floor(x);
     float yy = y - floor(y);
     return float(
@@ -268,7 +268,7 @@ int main(int argc, char **argv) {
         depth = cv::imread ( path_to_dataset+"/"+depth_file, -1 );
         if ( color.data==nullptr || depth.data==nullptr )
             continue;
-        cv::cvtColor( color , gray, cv::COLOR_BayerRG2GRAY);
+        cv::cvtColor( color , gray, cv::COLOR_BGR2GRAY);
         if ( index == 0 )
         {
             // extract feature pts in first frame(img)
