@@ -2,10 +2,16 @@
 #define FRAME_H
 
 #include "myslam/common_include.h"
+#include "myslam/camera.h"
 
 
 // store: id, time_stamp, pose, color&depth imgs
 // fnc: createFrame, find depth for pointm find camera optical centre, check if one point is in range
+
+
+namespace myslam
+{
+
 
 class Frame {
 public:
@@ -19,10 +25,12 @@ public:
 public:        //data members
 	Frame();
 
-	Frame(long id, double time_stamp_ = 0, Sophus::SE3 T_c_w_ = SE3(), Camera::Ptr camera = nullptr,
+	Frame(long id, double time_stamp = 0, Sophus::SE3 T_c_w = SE3(), Camera::Ptr camera = nullptr,
 		  Mat color = Mat(),
-		  Mat depth = Mat());  // see how the initial value are defined by different variable names! (with/ without understroke)
+		  Mat depth = Mat()
+    );  // see how the initial value are defined by different variable names! (with/ without understroke)
 	~Frame();
+
 
 	//factory function
 	static Frame::Ptr createFrame();
@@ -35,8 +43,15 @@ public:        //data members
 
 	// check if a point is in this frame
 
-	bool isInFrame(const Vector3d &pt_ world);
+	bool isInFrame(const Vector3d &pt_world);
 };
+
+
+}
+
+#endif
+
+
 
 
 

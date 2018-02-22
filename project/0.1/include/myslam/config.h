@@ -9,7 +9,7 @@ class Config // config file reading, and provide config accessible anywhere
 // when programs end, delete itself
 
 {
-private:  // avoid this object in class established somewhere else, only in setParameterFile
+private:  // avoid this object in class established somewhere else, only estabilished in setParameterFile
 	// actually, object of construct is Cinfig's pointer: static shared_ptr<Config>config_
 	// read file: use opencv filestorage class --can read a YAML file and visit any string
 	static std::share_ptr<Config> config_;
