@@ -5,9 +5,12 @@
 #include "myslam/common_include.h"
 
 
+#include <opencv2/features2d/features2d.hpp>
 
 
-namespace myslam {
+namespace myslam
+{
+
     class VisualOdometry
 
 // about vo class:
@@ -19,11 +22,15 @@ namespace myslam {
     {
     public:
         typedef shared_ptr<VisualOdometry> Ptr;
-        enum VOState {
-            INITILIZING = 1, OK = 0, LOST
+        enum VOState
+        {
+            INITIALIZING = 1,
+            OK = 0,
+            LOST
         };
 
         VOState state_; // current VO status
+
         Map::Ptr map_; //map with all frames and map points
         Frame::Ptr ref_; //reference frame
         Frame::Ptr curr_; // current frame
@@ -34,15 +41,15 @@ namespace myslam {
         Mat descriptors_ref_; //descriptors in ref frame
         vector<cv::DMatch> feature_matches_;
 
-        SE3 T_c_r_estimated_; // estimated pose of current frame
+        SE3 T_c_r_estimated_; // estimated pose of current frame to ref frame
         int num_inliers_; // number of inlier features in icp
         int num_lost_; // number of lost times
 
         //params
-        int num_of_features;
+        int num_of_features_;
         double scale_factor_; // in image pyramid
         int level_pyramid_;
-        float match_ratio_;
+        float match_ratio_;  // ratio for selecting good matches
         int max_num_lost_; // max num of continuous lost times
         int min_inliers_;
 
@@ -57,7 +64,7 @@ namespace myslam {
         bool addFrame(Frame::Ptr frame); // add a new frame
 
     protected:
-// inner operation
+        // inner operation
         void extractKeyPoints();
 
         void computeDescriptors();
@@ -77,3 +84,6 @@ namespace myslam {
     };
 
 }
+
+
+#endif

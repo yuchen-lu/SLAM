@@ -322,7 +322,7 @@ src/CMakeFiles/myslam.dir/camera.cpp.o: /usr/local/include/sophus/se3.h
 src/CMakeFiles/myslam.dir/camera.cpp.o: /usr/local/include/sophus/so3.h
 
 src/CMakeFiles/myslam.dir/config.cpp.o: ../include/myslam/common_include.h
-src/CMakeFiles/myslam.dir/config.cpp.o: /home/yuchen/SLAMbook/project/0.1/include/myslam/config.h
+src/CMakeFiles/myslam.dir/config.cpp.o: ../include/myslam/config.h
 src/CMakeFiles/myslam.dir/config.cpp.o: ../src/config.cpp
 src/CMakeFiles/myslam.dir/config.cpp.o: /usr/include/eigen3/Eigen/Cholesky
 src/CMakeFiles/myslam.dir/config.cpp.o: /usr/include/eigen3/Eigen/Core
@@ -641,8 +641,9 @@ src/CMakeFiles/myslam.dir/config.cpp.o: /usr/local/include/opencv2/viz/widgets.h
 src/CMakeFiles/myslam.dir/config.cpp.o: /usr/local/include/sophus/se3.h
 src/CMakeFiles/myslam.dir/config.cpp.o: /usr/local/include/sophus/so3.h
 
+src/CMakeFiles/myslam.dir/frame.cpp.o: ../include/myslam/camera.h
 src/CMakeFiles/myslam.dir/frame.cpp.o: ../include/myslam/common_include.h
-src/CMakeFiles/myslam.dir/frame.cpp.o: /home/yuchen/SLAMbook/project/0.1/include/myslam/frame.h
+src/CMakeFiles/myslam.dir/frame.cpp.o: ../include/myslam/frame.h
 src/CMakeFiles/myslam.dir/frame.cpp.o: ../src/frame.cpp
 src/CMakeFiles/myslam.dir/frame.cpp.o: /usr/include/eigen3/Eigen/Cholesky
 src/CMakeFiles/myslam.dir/frame.cpp.o: /usr/include/eigen3/Eigen/Core
@@ -1284,9 +1285,7 @@ src/CMakeFiles/myslam.dir/map.cpp.o: /usr/local/include/opencv2/viz/widgets.hpp
 src/CMakeFiles/myslam.dir/map.cpp.o: /usr/local/include/sophus/se3.h
 src/CMakeFiles/myslam.dir/map.cpp.o: /usr/local/include/sophus/so3.h
 
-src/CMakeFiles/myslam.dir/mappoint.cpp.o: ../include/myslam/camera.h
 src/CMakeFiles/myslam.dir/mappoint.cpp.o: ../include/myslam/common_include.h
-src/CMakeFiles/myslam.dir/mappoint.cpp.o: ../include/myslam/frame.h
 src/CMakeFiles/myslam.dir/mappoint.cpp.o: ../include/myslam/mappoint.h
 src/CMakeFiles/myslam.dir/mappoint.cpp.o: ../src/mappoint.cpp
 src/CMakeFiles/myslam.dir/mappoint.cpp.o: /usr/include/eigen3/Eigen/Cholesky
@@ -1837,6 +1836,7 @@ src/CMakeFiles/myslam.dir/visual_odometry.cpp.o: /usr/local/include/opencv2/cuda
 src/CMakeFiles/myslam.dir/visual_odometry.cpp.o: /usr/local/include/opencv2/cudastereo.hpp
 src/CMakeFiles/myslam.dir/visual_odometry.cpp.o: /usr/local/include/opencv2/cudawarping.hpp
 src/CMakeFiles/myslam.dir/visual_odometry.cpp.o: /usr/local/include/opencv2/features2d.hpp
+src/CMakeFiles/myslam.dir/visual_odometry.cpp.o: /usr/local/include/opencv2/features2d/features2d.hpp
 src/CMakeFiles/myslam.dir/visual_odometry.cpp.o: /usr/local/include/opencv2/flann.hpp
 src/CMakeFiles/myslam.dir/visual_odometry.cpp.o: /usr/local/include/opencv2/flann/all_indices.h
 src/CMakeFiles/myslam.dir/visual_odometry.cpp.o: /usr/local/include/opencv2/flann/allocator.h

@@ -1,30 +1,23 @@
-#ifndef COMMON_INCLUDE_H
+//
+// Created by yuchen on 20/02/18.
+//
+
+#ifndef OMMON_INCLUDE_H
 #define COMMON_INCLUDE_H
 
-// define the commonly included file to avoid a long include list
-
-
-//eigen
-#include<eigen3/Eigen/Core>
-#include <eigen3/Eigen/Geometry>
-
+#include <Eigen/Core>
+#include <Eigen/Geometry>
 using Eigen::Vector2d;
 using Eigen::Vector3d;
 
-//for sophus
-#include<sophus/se3.h>
-#include <sophus/so3.h>
+#include <sophus/se3.h>
 using Sophus::SE3;
 using Sophus::SO3;
 
-
-// for opencv
 #include <opencv2/core/core.hpp>
 using cv::Mat;
 
-
-//std
-#include<vector>
+#include <vector>
 #include <list>
 #include <memory>
 #include <string>
@@ -34,7 +27,6 @@ using cv::Mat;
 #include <map>
 
 using namespace std;
-#endif
 
 
-
+#endif //MYSLAM_COMMON_INCLUDE_H

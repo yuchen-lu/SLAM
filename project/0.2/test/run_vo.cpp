@@ -7,6 +7,7 @@
 #include "myslam/config.h"
 #include "myslam/visual_odometry.h"
 
+
 int main (int argc, char** argv)
 {
   if (argc!= 2)
@@ -15,17 +16,15 @@ int main (int argc, char** argv)
     return 1;
   }
   
-  myslam::Config::setParameterFile (argv[1]);
+  myslam::Config::setParameterFile ( argv[1] );
   myslam::VisualOdometry::Ptr vo( new myslam::VisualOdometry );
-  string dataset_Dir = myslam::Config::get<string> ("dataset_Dir");
-  cout<<"dataset:  "<<dataset_Dir<<endl;
+  string dataset_Dir = myslam::Config::get<string> ( "dataset_dir" );
+  cout<<"dataset dir is :  "<<dataset_Dir<<endl;
   ifstream fin( dataset_Dir+"/associate.txt");
-  if ( !fin)
+  if ( !fin )
   {
-    cout<<"please generate associate file!"<<endl;
+    cout<<"please generate associate file! should be name of associate.txt!"<<endl;
     return 1;
-    
-    
   }
   
   vector<string> rgb_files, depth_files;
@@ -43,7 +42,7 @@ int main (int argc, char** argv)
       break;
     
   }
-  myslam::camera::Ptr camera ( new myslam::camera);
+  myslam::Camera::Ptr camera ( new myslam::Camera);
   
   // visualization
   cv::viz::Viz3d vis("Visual Odometry");
