@@ -29,6 +29,8 @@ VisualOdometry::VisualOdometry() :
 
 VisualOdometry::~VisualOdometry() {}
 
+
+
 bool VisualOdometry::addFrame(Frame::Ptr frame)
 {
     switch ( state_)
@@ -170,7 +172,7 @@ void VisualOdometry::poseEstimationPnP() {
         pts2d.push_back(keypoints_curr_[m.trainIdx].pt);
     }
 
-    Mat K = (cv::Mat <double> (3, 3) <<
+    Mat K = (cv::Mat_<double> (3, 3) <<
                ref_->camera_->fx_, 0, ref_->camera_->cx_,
                0, ref_->camera_->fy_, ref_->camera_->cy_,
                0,  0, 1 );
@@ -218,8 +220,10 @@ bool VisualOdometry::checkKeyFrame() {
 
 
 void VisualOdometry::addKeyFrame() {
-    cout<<"add ad key-frame"<<end;
+    cout<<"add ad key-frame"<<endl;
     map_->insertKeyFrame( curr_ );
 }
 
 }
+
+

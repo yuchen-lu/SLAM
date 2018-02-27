@@ -24,7 +24,7 @@ namespace myslam
         typedef shared_ptr<VisualOdometry> Ptr;
         enum VOState
         {
-            INITIALIZING = 1,
+            INITIALIZING = -1,
             OK = 0,
             LOST
         };

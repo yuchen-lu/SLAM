@@ -81,9 +81,33 @@ src/CMakeFiles/myslam.dir/frame.cpp.o.provides: src/CMakeFiles/myslam.dir/frame.
 src/CMakeFiles/myslam.dir/frame.cpp.o.provides.build: src/CMakeFiles/myslam.dir/frame.cpp.o
 
 
+src/CMakeFiles/myslam.dir/mappoint.cpp.o: src/CMakeFiles/myslam.dir/flags.make
+src/CMakeFiles/myslam.dir/mappoint.cpp.o: ../src/mappoint.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yuchen/SLAMbook/project/0.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/myslam.dir/mappoint.cpp.o"
+	cd /home/yuchen/SLAMbook/project/0.2/cmake-build-debug/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myslam.dir/mappoint.cpp.o -c /home/yuchen/SLAMbook/project/0.2/src/mappoint.cpp
+
+src/CMakeFiles/myslam.dir/mappoint.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myslam.dir/mappoint.cpp.i"
+	cd /home/yuchen/SLAMbook/project/0.2/cmake-build-debug/src && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yuchen/SLAMbook/project/0.2/src/mappoint.cpp > CMakeFiles/myslam.dir/mappoint.cpp.i
+
+src/CMakeFiles/myslam.dir/mappoint.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myslam.dir/mappoint.cpp.s"
+	cd /home/yuchen/SLAMbook/project/0.2/cmake-build-debug/src && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yuchen/SLAMbook/project/0.2/src/mappoint.cpp -o CMakeFiles/myslam.dir/mappoint.cpp.s
+
+src/CMakeFiles/myslam.dir/mappoint.cpp.o.requires:
+
+.PHONY : src/CMakeFiles/myslam.dir/mappoint.cpp.o.requires
+
+src/CMakeFiles/myslam.dir/mappoint.cpp.o.provides: src/CMakeFiles/myslam.dir/mappoint.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/myslam.dir/build.make src/CMakeFiles/myslam.dir/mappoint.cpp.o.provides.build
+.PHONY : src/CMakeFiles/myslam.dir/mappoint.cpp.o.provides
+
+src/CMakeFiles/myslam.dir/mappoint.cpp.o.provides.build: src/CMakeFiles/myslam.dir/mappoint.cpp.o
+
+
 src/CMakeFiles/myslam.dir/map.cpp.o: src/CMakeFiles/myslam.dir/flags.make
 src/CMakeFiles/myslam.dir/map.cpp.o: ../src/map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yuchen/SLAMbook/project/0.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/myslam.dir/map.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yuchen/SLAMbook/project/0.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/myslam.dir/map.cpp.o"
 	cd /home/yuchen/SLAMbook/project/0.2/cmake-build-debug/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myslam.dir/map.cpp.o -c /home/yuchen/SLAMbook/project/0.2/src/map.cpp
 
 src/CMakeFiles/myslam.dir/map.cpp.i: cmake_force
@@ -107,7 +131,7 @@ src/CMakeFiles/myslam.dir/map.cpp.o.provides.build: src/CMakeFiles/myslam.dir/ma
 
 src/CMakeFiles/myslam.dir/camera.cpp.o: src/CMakeFiles/myslam.dir/flags.make
 src/CMakeFiles/myslam.dir/camera.cpp.o: ../src/camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yuchen/SLAMbook/project/0.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/myslam.dir/camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yuchen/SLAMbook/project/0.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/myslam.dir/camera.cpp.o"
 	cd /home/yuchen/SLAMbook/project/0.2/cmake-build-debug/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myslam.dir/camera.cpp.o -c /home/yuchen/SLAMbook/project/0.2/src/camera.cpp
 
 src/CMakeFiles/myslam.dir/camera.cpp.i: cmake_force
@@ -131,7 +155,7 @@ src/CMakeFiles/myslam.dir/camera.cpp.o.provides.build: src/CMakeFiles/myslam.dir
 
 src/CMakeFiles/myslam.dir/config.cpp.o: src/CMakeFiles/myslam.dir/flags.make
 src/CMakeFiles/myslam.dir/config.cpp.o: ../src/config.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yuchen/SLAMbook/project/0.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/myslam.dir/config.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yuchen/SLAMbook/project/0.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/myslam.dir/config.cpp.o"
 	cd /home/yuchen/SLAMbook/project/0.2/cmake-build-debug/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myslam.dir/config.cpp.o -c /home/yuchen/SLAMbook/project/0.2/src/config.cpp
 
 src/CMakeFiles/myslam.dir/config.cpp.i: cmake_force
@@ -155,7 +179,7 @@ src/CMakeFiles/myslam.dir/config.cpp.o.provides.build: src/CMakeFiles/myslam.dir
 
 src/CMakeFiles/myslam.dir/visual_odometry.cpp.o: src/CMakeFiles/myslam.dir/flags.make
 src/CMakeFiles/myslam.dir/visual_odometry.cpp.o: ../src/visual_odometry.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yuchen/SLAMbook/project/0.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/myslam.dir/visual_odometry.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yuchen/SLAMbook/project/0.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/myslam.dir/visual_odometry.cpp.o"
 	cd /home/yuchen/SLAMbook/project/0.2/cmake-build-debug/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myslam.dir/visual_odometry.cpp.o -c /home/yuchen/SLAMbook/project/0.2/src/visual_odometry.cpp
 
 src/CMakeFiles/myslam.dir/visual_odometry.cpp.i: cmake_force
@@ -177,48 +201,24 @@ src/CMakeFiles/myslam.dir/visual_odometry.cpp.o.provides: src/CMakeFiles/myslam.
 src/CMakeFiles/myslam.dir/visual_odometry.cpp.o.provides.build: src/CMakeFiles/myslam.dir/visual_odometry.cpp.o
 
 
-src/CMakeFiles/myslam.dir/mappoint.cpp.o: src/CMakeFiles/myslam.dir/flags.make
-src/CMakeFiles/myslam.dir/mappoint.cpp.o: ../src/mappoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yuchen/SLAMbook/project/0.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/myslam.dir/mappoint.cpp.o"
-	cd /home/yuchen/SLAMbook/project/0.2/cmake-build-debug/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myslam.dir/mappoint.cpp.o -c /home/yuchen/SLAMbook/project/0.2/src/mappoint.cpp
-
-src/CMakeFiles/myslam.dir/mappoint.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myslam.dir/mappoint.cpp.i"
-	cd /home/yuchen/SLAMbook/project/0.2/cmake-build-debug/src && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yuchen/SLAMbook/project/0.2/src/mappoint.cpp > CMakeFiles/myslam.dir/mappoint.cpp.i
-
-src/CMakeFiles/myslam.dir/mappoint.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myslam.dir/mappoint.cpp.s"
-	cd /home/yuchen/SLAMbook/project/0.2/cmake-build-debug/src && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yuchen/SLAMbook/project/0.2/src/mappoint.cpp -o CMakeFiles/myslam.dir/mappoint.cpp.s
-
-src/CMakeFiles/myslam.dir/mappoint.cpp.o.requires:
-
-.PHONY : src/CMakeFiles/myslam.dir/mappoint.cpp.o.requires
-
-src/CMakeFiles/myslam.dir/mappoint.cpp.o.provides: src/CMakeFiles/myslam.dir/mappoint.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/myslam.dir/build.make src/CMakeFiles/myslam.dir/mappoint.cpp.o.provides.build
-.PHONY : src/CMakeFiles/myslam.dir/mappoint.cpp.o.provides
-
-src/CMakeFiles/myslam.dir/mappoint.cpp.o.provides.build: src/CMakeFiles/myslam.dir/mappoint.cpp.o
-
-
 # Object files for target myslam
 myslam_OBJECTS = \
 "CMakeFiles/myslam.dir/frame.cpp.o" \
+"CMakeFiles/myslam.dir/mappoint.cpp.o" \
 "CMakeFiles/myslam.dir/map.cpp.o" \
 "CMakeFiles/myslam.dir/camera.cpp.o" \
 "CMakeFiles/myslam.dir/config.cpp.o" \
-"CMakeFiles/myslam.dir/visual_odometry.cpp.o" \
-"CMakeFiles/myslam.dir/mappoint.cpp.o"
+"CMakeFiles/myslam.dir/visual_odometry.cpp.o"
 
 # External object files for target myslam
 myslam_EXTERNAL_OBJECTS =
 
 ../lib/libmyslam.so: src/CMakeFiles/myslam.dir/frame.cpp.o
+../lib/libmyslam.so: src/CMakeFiles/myslam.dir/mappoint.cpp.o
 ../lib/libmyslam.so: src/CMakeFiles/myslam.dir/map.cpp.o
 ../lib/libmyslam.so: src/CMakeFiles/myslam.dir/camera.cpp.o
 ../lib/libmyslam.so: src/CMakeFiles/myslam.dir/config.cpp.o
 ../lib/libmyslam.so: src/CMakeFiles/myslam.dir/visual_odometry.cpp.o
-../lib/libmyslam.so: src/CMakeFiles/myslam.dir/mappoint.cpp.o
 ../lib/libmyslam.so: src/CMakeFiles/myslam.dir/build.make
 ../lib/libmyslam.so: /usr/local/lib/libopencv_cudabgsegm.so.3.3.1
 ../lib/libmyslam.so: /usr/local/lib/libopencv_cudaobjdetect.so.3.3.1
@@ -261,11 +261,11 @@ src/CMakeFiles/myslam.dir/build: ../lib/libmyslam.so
 .PHONY : src/CMakeFiles/myslam.dir/build
 
 src/CMakeFiles/myslam.dir/requires: src/CMakeFiles/myslam.dir/frame.cpp.o.requires
+src/CMakeFiles/myslam.dir/requires: src/CMakeFiles/myslam.dir/mappoint.cpp.o.requires
 src/CMakeFiles/myslam.dir/requires: src/CMakeFiles/myslam.dir/map.cpp.o.requires
 src/CMakeFiles/myslam.dir/requires: src/CMakeFiles/myslam.dir/camera.cpp.o.requires
 src/CMakeFiles/myslam.dir/requires: src/CMakeFiles/myslam.dir/config.cpp.o.requires
 src/CMakeFiles/myslam.dir/requires: src/CMakeFiles/myslam.dir/visual_odometry.cpp.o.requires
-src/CMakeFiles/myslam.dir/requires: src/CMakeFiles/myslam.dir/mappoint.cpp.o.requires
 
 .PHONY : src/CMakeFiles/myslam.dir/requires
 

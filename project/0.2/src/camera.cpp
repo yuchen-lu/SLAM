@@ -43,9 +43,9 @@ Vector3d Camera::pixel2world( const Vector2d& p_p, const SE3& T_c_w, double dept
 }
 
 
-Vector2d Camera::world2pixel ( const Vector3d& p_c, const SE3& T_c_w)
+Vector2d Camera::world2pixel ( const Vector3d& p_w, const SE3& T_c_w)
 {
-  return world2camera(camera2pixel(p_c ), T_c_w);
+  return camera2pixel(world2camera(p_w , T_c_w) );
 
 }
     

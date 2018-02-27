@@ -59,7 +59,7 @@ int main (int argc, char** argv)
   cout<<"read total"<<rgb_files.size()<<" entries"<<endl;
   for ( int i=0; i<rgb_files.size(); i++)
   {
-    Mat color - cv::imread(rgb_files[i]);
+    Mat color = cv::imread(rgb_files[i]);
     Mat depth = cv::imread( depth_files[i], -1);
     if (color.data==nullptr || depth.data == nullptr)
       break;
