@@ -7,28 +7,28 @@ namespace myslam
   {
 
   }  //whats this declartion type? need to check
-  
+
   Frame::Frame ( long id, double time_stamp, SE3 T_c_w, Camera::Ptr camera, Mat color, Mat depth)
   : id_(id), time_stamp_( time_stamp ), T_c_w_(T_c_w), camera_(camera), color_(color), depth_(depth)
   {
-    
+
   }
 
 
 
   Frame::~Frame()
   {
-    
+
   }
 
-  
+
   Frame::Ptr Frame::createFrame()
   {
     static long factory_id = 0;
     return Frame::Ptr ( new Frame(factory_id++) );  // notice callout format for shared_ptr in frame and camera
   }
-  
-  
+
+
   double Frame::findDepth( const cv::KeyPoint& kp)
 
   {
@@ -39,7 +39,7 @@ namespace myslam
     {
       return double(d)/camera_->depth_scale_; // camera_ is a Camera::Ptr; 1st declared in camera.h; used in frame.h
     }
-    
+
     else
     {
       //check nearby points
@@ -60,13 +60,13 @@ namespace myslam
 
   }
 
-  
+
   Vector3d Frame::getCamCenter() const
   {
     return T_c_w_.inverse().translation();   //why??
   }
 
-  
+
   bool Frame::isInFrame ( const Vector3d& pt_world )
   {
       Vector3d p_cam = camera_->world2camera( pt_world, T_c_w_);

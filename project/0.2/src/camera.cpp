@@ -1,12 +1,21 @@
 #include"myslam/camera.h"
+#include "myslam/config.h"
 
-
-namespace myslam 
+namespace myslam
 {
-  
+
+
+
+
 Camera::Camera()
 {
+    fx_ = Config::get<float>("camera.fx");
+    fy_ = Config::get<float>("camera.fy");
+    cx_ = Config::get<float>("camera.cx");
+    cy_ = Config::get<float>("camera.cy");
+    depth_scale_ = Config::get<float>("camera.depth_scale");
 }
+
 
 Vector3d Camera::world2camera(const Vector3d& p_w, const SE3& T_c_w)
 {
@@ -43,11 +52,11 @@ Vector3d Camera::pixel2world( const Vector2d& p_p, const SE3& T_c_w, double dept
 }
 
 
-Vector2d Camera::world2pixel ( const Vector3d& p_w, const SE3& T_c_w)
+Vector2d Camera::world2pixel ( const Vector3d& p_c, const SE3& T_c_w)
 {
-  return camera2pixel(world2camera(p_w , T_c_w) );
+  return camera2pixel(world2camera(p_c, T_c_w));
 
 }
-    
+
 
 }

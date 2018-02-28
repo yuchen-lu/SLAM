@@ -27,8 +27,8 @@
       <file leaf-file-name="visual_odometry.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/myslam/visual_odometry.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+            <state relative-caret-position="184">
+              <caret line="73" column="30" lean-forward="false" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="30" />
               <folding>
                 <element signature="e#51#74#0" expanded="true" />
               </folding>
@@ -46,12 +46,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="camera.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="camera.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/camera.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
-              <folding />
+            <state relative-caret-position="504">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,11 +61,43 @@
       <file leaf-file-name="visual_odometry.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/visual_odometry.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="222" column="34" lean-forward="false" selection-start-line="222" selection-start-column="34" selection-end-line="222" selection-end-column="34" />
+            <state relative-caret-position="105">
+              <caret line="205" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
               <folding>
                 <element signature="e#1#39#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mappoint.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mappoint.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding>
+                <element signature="e#41#75#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="map.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/map.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="frame.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/frame.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="35" column="29" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -90,47 +124,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.yaml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="default.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/default.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StaticAssert.h" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/eigen3/Eigen/src/Core/util/StaticAssert.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="31" column="39" lean-forward="false" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="36" lean-forward="false" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="51" lean-forward="false" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+            <state relative-caret-position="288">
+              <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>pnp</find>
+    </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -141,18 +150,20 @@
         <option value="$PROJECT_DIR$/../0.1/include/myslam/config.h" />
         <option value="$PROJECT_DIR$/../0.1/include/myslam/frame.h" />
         <option value="$PROJECT_DIR$/include/myslam/map.h" />
-        <option value="$PROJECT_DIR$/src/mappoint.cpp" />
         <option value="$PROJECT_DIR$/include/myslam/mappoint.h" />
         <option value="$PROJECT_DIR$/include/myslam/frame.h" />
-        <option value="$PROJECT_DIR$/src/map.cpp" />
         <option value="$PROJECT_DIR$/include/myslam/common_include.h" />
         <option value="$PROJECT_DIR$/include/myslam/config.h" />
         <option value="$PROJECT_DIR$/src/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/camera.cpp" />
         <option value="$PROJECT_DIR$/include/myslam/visual_odometry.h" />
-        <option value="$PROJECT_DIR$/src/visual_odometry.cpp" />
         <option value="$PROJECT_DIR$/test/run_vo.cpp" />
+        <option value="$PROJECT_DIR$/config/default.yaml" />
+        <option value="$PROJECT_DIR$/src/visual_odometry.cpp" />
+        <option value="$PROJECT_DIR$/src/mappoint.cpp" />
+        <option value="$PROJECT_DIR$/src/map.cpp" />
+        <option value="$PROJECT_DIR$/src/frame.cpp" />
+        <option value="$PROJECT_DIR$/src/camera.cpp" />
       </list>
     </option>
   </component>
@@ -338,7 +349,7 @@
     <configuration name="myslam" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="myslam" TARGET_NAME="myslam" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="myslam" RUN_TARGET_NAME="run_vo">
       <envs />
     </configuration>
-    <configuration name="run_vo" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/data" PASS_PARENT_ENVS_2="true" PROJECT_NAME="myslam" TARGET_NAME="run_vo" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="myslam" RUN_TARGET_NAME="run_vo">
+    <configuration name="run_vo" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$USER_HOME$/Downloads/rgbd_dataset_freiburg1_xyz" PASS_PARENT_ENVS_2="true" PROJECT_NAME="myslam" TARGET_NAME="run_vo" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="myslam" RUN_TARGET_NAME="run_vo">
       <envs />
     </configuration>
     <list size="3">
@@ -371,22 +382,23 @@
       <workItem from="1519528057951" duration="34000" />
       <workItem from="1519528227745" duration="6039000" />
       <workItem from="1519581615534" duration="1512000" />
-      <workItem from="1519706310058" duration="883000" />
+      <workItem from="1519706310058" duration="3012000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27002000" />
+    <option name="totallyTimeSpent" value="29131000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11026201" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13373363" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33751306" sideWeight="0.8193231" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33751306" sideWeight="0.816048" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.49137932" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33751306" sideWeight="0.18067686" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.80676854" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33751306" sideWeight="0.18395196" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.80349344" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -605,13 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mappoint.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/myslam/mappoint.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -640,13 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/map.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake_modules/FindSparse.cmake">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -665,13 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="213" column="10" lean-forward="false" selection-start-line="213" selection-start-column="10" selection-end-line="213" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/frame.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -735,24 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/myslam/visual_odometry.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-          <folding>
-            <element signature="e#51#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/camera.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/myslam/frame.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -769,16 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/visual_odometry.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="222" column="34" lean-forward="false" selection-start-line="222" selection-start-column="34" selection-end-line="222" selection-end-column="34" />
-          <folding>
-            <element signature="e#1#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/run_vo.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -789,11 +752,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/myslam/visual_odometry.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="73" column="30" lean-forward="false" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="30" />
+          <folding>
+            <element signature="e#51#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/default.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="288">
+          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/visual_odometry.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="205" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mappoint.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#41#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/map.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frame.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="35" column="29" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/camera.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
