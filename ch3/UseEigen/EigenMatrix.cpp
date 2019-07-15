@@ -1,23 +1,26 @@
 #include <iostream>
 #include <ctime>
 using namespace std;
+using namespace Eigen;
 
 //eigen part
 #include <eigen3/Eigen/Core>
 // dense matrix alg comput(inverse,eigenvalue)
-#include<eigen3/Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 
 #define MATRIX_SIZE 50
 
 int main( int argc, char** argv)
 {
-//declare a matrix
-  Eigen::Matrix<float,2,3> matrix_23;
-  Eigen::Vector3d v_3d;
-  Eigen::Matrix3d matrix_33;  //double 3x3
-  Eigen::Matrix<double,Eigen::Dynamic, Eigen::Dynamic>matrix_dynamic;
-  Eigen::MatrixXd matrix_x;
-  
+
+
+    //declare a matrix
+    Eigen::Matrix<float,2,3> matrix_23;
+    Eigen::Vector3d v_3d;
+    Eigen::Matrix3d matrix_33;  //double 3x3
+    Eigen::Matrix<double,Eigen::Dynamic, Eigen::Dynamic>matrix_dynamic;
+    Eigen::MatrixXd matrix_x;
+
 //input valye
   matrix_23 << 1, 2, 3, 4, 5, 6;
   cout<< matrix_23<<endl;
