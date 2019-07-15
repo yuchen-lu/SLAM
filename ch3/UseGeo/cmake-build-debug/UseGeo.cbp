@@ -8,88 +8,88 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug"/>
+				<Option working_dir="/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug"/>
+				<Option working_dir="/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="UseGeo">
+				<Option output="/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/UseGeo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 UseGeo"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="UseGeo/fast">
+				<Option output="/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/UseGeo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 UseGeo/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug"/>
+				<Option working_dir="/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="UseGeometry">
-				<Option output="/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/UseGeometry" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/eigen3"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 UseGeometry"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="UseGeometry/fast">
-				<Option output="/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/UseGeometry" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/eigen3"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 UseGeometry/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/yuchen/SLAMbook/ch3/UseGeo/UseGeometry.cpp">
-			<Option target="UseGeometry"/>
+		<Unit filename="/home/yuchen/Documents/SLAM/ch3/UseGeo/UseGeometry.cpp">
+			<Option target="UseGeo"/>
 		</Unit>
-		<Unit filename="/home/yuchen/SLAMbook/ch3/UseGeo/CMakeLists.txt">
+		<Unit filename="/home/yuchen/Documents/SLAM/ch3/UseGeo/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -1,4 +1,4 @@
-/home/yuchen/clion-2017.3.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/yuchen/SLAMbook/ch3/UseGeo
+/home/yuchen/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/191.7141.37/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/yuchen/Documents/SLAM/ch3/UseGeo
 -- The C compiler identification is GNU 5.4.0
 -- The CXX compiler identification is GNU 5.4.0
 -- Check for working C compiler: /usr/bin/cc
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/yuchen/SLAMbook/ch3/UseGeo/cmake-build-debug
+-- Build files have been written to: /home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug
