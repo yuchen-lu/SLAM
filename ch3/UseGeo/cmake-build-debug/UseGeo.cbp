@@ -89,6 +89,9 @@
 		<Unit filename="/home/yuchen/Documents/SLAM/ch3/UseGeo/UseGeometry.cpp">
 			<Option target="UseGeo"/>
 		</Unit>
+		<Unit filename="/home/yuchen/Documents/SLAM/ch3/practice1/practice1.cpp">
+			<Option target="UseGeo"/>
+		</Unit>
 		<Unit filename="/home/yuchen/Documents/SLAM/ch3/UseGeo/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

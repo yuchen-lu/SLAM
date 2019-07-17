@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug
 CMakeFiles/UseGeo.dir/all:
 	$(MAKE) -f CMakeFiles/UseGeo.dir/build.make CMakeFiles/UseGeo.dir/depend
 	$(MAKE) -f CMakeFiles/UseGeo.dir/build.make CMakeFiles/UseGeo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target UseGeo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target UseGeo"
 .PHONY : CMakeFiles/UseGeo.dir/all
 
 # Include target in all.
@@ -81,7 +81,7 @@ all: CMakeFiles/UseGeo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/UseGeo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/UseGeo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuchen/Documents/SLAM/ch3/UseGeo/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/UseGeo.dir/rule

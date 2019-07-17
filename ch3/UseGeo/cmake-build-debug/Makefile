@@ -150,6 +150,33 @@ UseGeometry.cpp.s:
 	$(MAKE) -f CMakeFiles/UseGeo.dir/build.make CMakeFiles/UseGeo.dir/UseGeometry.cpp.s
 .PHONY : UseGeometry.cpp.s
 
+home/yuchen/Documents/SLAM/ch3/practice1/practice1.o: home/yuchen/Documents/SLAM/ch3/practice1/practice1.cpp.o
+
+.PHONY : home/yuchen/Documents/SLAM/ch3/practice1/practice1.o
+
+# target to build an object file
+home/yuchen/Documents/SLAM/ch3/practice1/practice1.cpp.o:
+	$(MAKE) -f CMakeFiles/UseGeo.dir/build.make CMakeFiles/UseGeo.dir/home/yuchen/Documents/SLAM/ch3/practice1/practice1.cpp.o
+.PHONY : home/yuchen/Documents/SLAM/ch3/practice1/practice1.cpp.o
+
+home/yuchen/Documents/SLAM/ch3/practice1/practice1.i: home/yuchen/Documents/SLAM/ch3/practice1/practice1.cpp.i
+
+.PHONY : home/yuchen/Documents/SLAM/ch3/practice1/practice1.i
+
+# target to preprocess a source file
+home/yuchen/Documents/SLAM/ch3/practice1/practice1.cpp.i:
+	$(MAKE) -f CMakeFiles/UseGeo.dir/build.make CMakeFiles/UseGeo.dir/home/yuchen/Documents/SLAM/ch3/practice1/practice1.cpp.i
+.PHONY : home/yuchen/Documents/SLAM/ch3/practice1/practice1.cpp.i
+
+home/yuchen/Documents/SLAM/ch3/practice1/practice1.s: home/yuchen/Documents/SLAM/ch3/practice1/practice1.cpp.s
+
+.PHONY : home/yuchen/Documents/SLAM/ch3/practice1/practice1.s
+
+# target to generate assembly for a file
+home/yuchen/Documents/SLAM/ch3/practice1/practice1.cpp.s:
+	$(MAKE) -f CMakeFiles/UseGeo.dir/build.make CMakeFiles/UseGeo.dir/home/yuchen/Documents/SLAM/ch3/practice1/practice1.cpp.s
+.PHONY : home/yuchen/Documents/SLAM/ch3/practice1/practice1.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +189,9 @@ help:
 	@echo "... UseGeometry.o"
 	@echo "... UseGeometry.i"
 	@echo "... UseGeometry.s"
+	@echo "... home/yuchen/Documents/SLAM/ch3/practice1/practice1.o"
+	@echo "... home/yuchen/Documents/SLAM/ch3/practice1/practice1.i"
+	@echo "... home/yuchen/Documents/SLAM/ch3/practice1/practice1.s"
 .PHONY : help
 
 
