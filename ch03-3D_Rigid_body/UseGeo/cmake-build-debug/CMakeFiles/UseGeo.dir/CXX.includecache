@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yuchen/Documents/SLAM/ch3/UseGeo/UseGeometry.cpp
+iostream
+-
+cmath
+-
+eigen3/Eigen/Core
+-
+eigen3/Eigen/Geometry
+-
+
